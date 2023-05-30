@@ -1,4 +1,4 @@
-import { BUILD_OUTPUT } from '../paths'
+import { BUILD_ROOT } from '../paths'
 import { run } from './process'
 
 import type { TaskFunction } from 'gulp'
@@ -8,5 +8,5 @@ export const withTaskName = <T extends TaskFunction>(name: string, fn: T) =>
 
 export const runTask = (name: string) =>
   withTaskName(`shellTask:${name}`, () =>
-    run(`pnpm run start ${name}`, BUILD_OUTPUT)
+    run(`pnpm run start ${name}`, BUILD_ROOT)
   )

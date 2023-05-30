@@ -11,6 +11,9 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "dependencies": {
+    "@ant-design-solid/component": "workspace:*"
+  },
   "devDependencies": {
     "@types/node": "^20.2.5",
     "solid-js": "^1.7.5",

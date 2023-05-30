@@ -9,5 +9,5 @@ export const PKG_ANT = resolve(PKG,'ant-design')
 
 /** `/dist` */
 export const BUILD_OUTPUT = resolve(ROOT, 'dist')
-/** `/dist/element-plus` */
+/** `/dist/ant_design_solid` */
 export const ANTD_OUTPUT = resolve(BUILD_OUTPUT, 'ant_design_solid')

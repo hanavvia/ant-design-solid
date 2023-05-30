@@ -6,3 +6,5 @@ export default series(
       runTask('buildFullBundle'),
     ),
   )
+
+export * from './src'

@@ -15,12 +15,14 @@
   "dependencies": {
     "@rollup/plugin-commonjs": "^25.0.0",
     "@rollup/plugin-node-resolve": "^15.0.2",
+    "@rollup/plugin-typescript": "^11.1.1",
     "chalk": "^5.2.0",
     "consola": "^3.1.0",
     "esbuild": "^0.17.19",
     "gulp": "^4.0.2",
     "rollup": "^3.23.0",
-    "rollup-plugin-esbuild": "^5.0.0"
+    "rollup-plugin-esbuild": "^5.0.0",
+    "tslib": "^2.5.2"
   },
   "devDependencies": {
     "@esbuild-kit/cjs-loader": "^2.4.2"

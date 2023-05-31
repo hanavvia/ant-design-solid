@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "play": "pnpm run -C play dev",
     "stub": "pnpm run -C build stub",
     "postinstall": "pnpm stub"
   },

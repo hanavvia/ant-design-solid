@@ -1,19 +1,24 @@
 /* @refresh reload */
-import { render } from 'solid-js/web';
+import { render } from 'solid-js/web'
 
-import './index.css';
-import App from './App';
-
-// ;(async () => {
-//   // TODO
-
-// })
-const root = document.getElementById('root');
-
-if (import.meta.env.DEV && !(root instanceof HTMLElement)) {
-  throw new Error(
-    'Root element not found. Did you forget to add it to your index.html? Or maybe the id attribute got mispelled?',
-  );
-}
-
-render(() => <App />, root!);
+import './index.css'
+;(async () => {
+  const root = document.getElementById('root')
+  if (import.meta.env.DEV && !(root instanceof HTMLElement)) {
+    throw new Error(
+      'Root element not found. Did you forget to add it to your index.html? Or maybe the id attribute got mispelled?'
+    )
+  }
+  const apps = import.meta.glob('./*.tsx')
+  const name = location.pathname.replace(/^\//, '') || 'App'
+  const file = apps[`./${name}.tsx`]
+  if (!file) {
+    location.pathname = 'App'
+    return
+  }
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const App = ((await file()) as any).default
+  if (root) {
+    render(() => <App />, root)
+  }
+})()

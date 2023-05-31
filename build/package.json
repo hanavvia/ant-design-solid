@@ -13,14 +13,23 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@babel/core": "^7.22.1",
+    "@babel/preset-typescript": "^7.21.5",
+    "@rollup/plugin-babel": "^6.0.3",
     "@rollup/plugin-commonjs": "^25.0.0",
     "@rollup/plugin-node-resolve": "^15.0.2",
+    "@rollup/plugin-typescript": "^11.1.1",
+    "@types/gulp": "^4.0.11",
+    "babel-preset-solid": "^1.7.4",
     "chalk": "^5.2.0",
     "consola": "^3.1.0",
     "esbuild": "^0.17.19",
     "gulp": "^4.0.2",
     "rollup": "^3.23.0",
-    "rollup-plugin-esbuild": "^5.0.0"
+    "rollup-plugin-dts": "^5.3.0",
+    "rollup-plugin-esbuild": "^5.0.0",
+    "tslib": "^2.5.2",
+    "typescript": "^5.0.4"
   },
   "devDependencies": {
     "@esbuild-kit/cjs-loader": "^2.4.2"

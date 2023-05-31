@@ -2,6 +2,7 @@
 import { render } from 'solid-js/web'
 
 import './index.css'
+import '@ant-design-solid/theme-chalk/src/index.scss'
 ;(async () => {
   const root = document.getElementById('root')
   if (import.meta.env.DEV && !(root instanceof HTMLElement)) {

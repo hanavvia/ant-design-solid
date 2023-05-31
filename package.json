@@ -14,7 +14,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@ant-design-solid/component": "workspace:*"
+    "@ant-design-solid/component": "workspace:*",
+    "@ant-design-solid/theme-chalk": "workspace:*"
   },
   "devDependencies": {
     "@types/node": "^20.2.5",
@@ -24,6 +25,7 @@
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-prettier": "^4.2.1",
     "prettier": "^2.8.8",
+    "sass": "^1.62.1",
     "solid-js": "^1.7.5",
     "typescript": "^5.0.4",
     "unbuild": "^1.2.1",

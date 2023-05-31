@@ -11,6 +11,9 @@ importers:
       '@ant-design-solid/component':
         specifier: workspace:*
         version: link:packages/component
+      '@ant-design-solid/theme-chalk':
+        specifier: workspace:*
+        version: link:packages/theme-chalk
     devDependencies:
       '@types/node':
         specifier: ^20.2.5
@@ -33,6 +36,9 @@ importers:
       prettier:
         specifier: ^2.8.8
         version: 2.8.8
+      sass:
+        specifier: ^1.62.1
+        version: 1.62.1
       solid-js:
         specifier: ^1.7.5
         version: 1.7.5
@@ -41,10 +47,10 @@ importers:
         version: 5.0.4
       unbuild:
         specifier: ^1.2.1
-        version: 1.2.1
+        version: 1.2.1(sass@1.62.1)
       vite:
         specifier: ^4.1.1
-        version: 4.1.1(@types/node@20.2.5)
+        version: 4.1.1(@types/node@20.2.5)(sass@1.62.1)
       vite-plugin-solid:
         specifier: ^2.5.0
         version: 2.5.0(solid-js@1.7.5)(vite@4.1.1)
@@ -1357,7 +1363,6 @@ packages:
     dependencies:
       normalize-path: 3.0.0
       picomatch: 2.3.1
-    dev: false
 
   /append-buffer@1.0.2:
     resolution: {integrity: sha512-WLbYiXzD3y/ATLZFufV/rZvWdZOs+Z/+5v1rBZ463Jn398pa6kcde27cvozYnBoxXblGZTFfoPpsaEw0orU5BA==}
@@ -1538,7 +1543,6 @@ packages:
   /binary-extensions@2.2.0:
     resolution: {integrity: sha512-jDctJ/IVQbZoJykoeHbhXpOlNBqGNcwXJKJog42E5HDPUwQTSdjCHdihjj0DlnheQ7blbT6dHOafNAiS8ooQKA==}
     engines: {node: '>=8'}
-    dev: false
 
   /bindings@1.5.0:
     resolution: {integrity: sha512-p2q/t/mhvuOj/UeLlV6566GD/guowlr0hHxClI0W9m7MWYkL1F0hLo+0Aexs9HSPCtR1SXQ0TD3MMKrXZajbiQ==}
@@ -1694,7 +1698,6 @@ packages:
       readdirp: 3.6.0
     optionalDependencies:
       fsevents: 2.3.2
-    dev: false
 
   /class-utils@0.3.6:
     resolution: {integrity: sha512-qOhPa/Fj7s6TY8H8esGu5QNpMMQxz79h+urzrNYN6mn+9BnxlDGf5QZ+XeCDsxSjPqsSR56XOZOJmpeurnLMeg==}
@@ -2803,6 +2806,10 @@ packages:
     engines: {node: '>= 4'}
     dev: true
 
+  /immutable@4.3.0:
+    resolution: {integrity: sha512-0AOCmOip+xgJwEVTQj1EfiDDOkPmuyllDuTuEX+DDXUgapLAsBIfkg3sxCYyCEA8mQqZrrxPUGjcOQ2JS3WLkg==}
+    dev: true
+
   /import-fresh@3.3.0:
     resolution: {integrity: sha512-veYYhQa+D1QBKznvhUHxb8faxlrwUnxseDAbAp457E0wLNio2bOSKnjYDhMj+YiAq61xrMGhQk9iXVk5FzgQMw==}
     engines: {node: '>=6'}
@@ -2877,7 +2884,6 @@ packages:
     engines: {node: '>=8'}
     dependencies:
       binary-extensions: 2.2.0
-    dev: false
 
   /is-buffer@1.1.6:
     resolution: {integrity: sha512-NcdALwpXkTm5Zvvbk7owOUSvVvBKDgKP5/ewfXEznmQFfs4ZRmanOeKBTjRVjka3QFoN6XJ+9F3USqfHqTaU5w==}
@@ -3326,7 +3332,7 @@ packages:
       is-extendable: 1.0.1
     dev: false
 
-  /mkdist@1.2.0(typescript@5.0.4):
+  /mkdist@1.2.0(sass@1.62.1)(typescript@5.0.4):
     resolution: {integrity: sha512-UTqu/bXmIk/+VKNVgufAeMyjUcNy1dn9Bl7wL1zZlCKVrpDgj/VllmZBeh3ZCC/2HWqUrt6frNFTKt9TRZbNvQ==}
     hasBin: true
     peerDependencies:
@@ -3346,6 +3352,7 @@ packages:
       mlly: 1.3.0
       mri: 1.2.0
       pathe: 1.1.0
+      sass: 1.62.1
       typescript: 5.0.4
     dev: true
 
@@ -3440,7 +3447,6 @@ packages:
   /normalize-path@3.0.0:
     resolution: {integrity: sha512-6eZs5Ls3WtCisHWp9S2GUy8dqkpGi4BVSz3GaqiE6ezub0512ESztXUwUB6C6IKbQkY2Pnb/mD4WYojCRwcwLA==}
     engines: {node: '>=0.10.0'}
-    dev: false
 
   /now-and-later@2.0.1:
     resolution: {integrity: sha512-KGvQ0cB70AQfg107Xvs/Fbu+dGmZoTRJp2TaPwcwQm3/7PteUyN2BCgk8KBMPGBUXZdVwyWS8fDCGFygBm19UQ==}
@@ -3805,7 +3811,6 @@ packages:
     engines: {node: '>=8.10.0'}
     dependencies:
       picomatch: 2.3.1
-    dev: false
 
   /rechoir@0.6.2:
     resolution: {integrity: sha512-HFM8rkZ+i3zrV+4LQjwQ0W+ez98pApMGM3HUrN04j3CqzPOzl9nmP15Y8YXNm8QHGv/eacOVEjqhmWpkRV0NAw==}
@@ -3987,6 +3992,16 @@ packages:
     dependencies:
       ret: 0.1.15
     dev: false
+
+  /sass@1.62.1:
+    resolution: {integrity: sha512-NHpxIzN29MXvWiuswfc1W3I0N8SXBd8UR26WntmDlRYf0bSADnwnOjsyMZ3lMezSlArD33Vs3YFhp7dWvL770A==}
+    engines: {node: '>=14.0.0'}
+    hasBin: true
+    dependencies:
+      chokidar: 3.5.3
+      immutable: 4.3.0
+      source-map-js: 1.0.2
+    dev: true
 
   /scule@1.0.0:
     resolution: {integrity: sha512-4AsO/FrViE/iDNEPaAQlb77tf0csuq27EsVpy6ett584EcRTp6pTDLoGWVxCD77y5iU5FauOvhsI4o1APwPoSQ==}
@@ -4386,7 +4401,7 @@ packages:
     resolution: {integrity: sha512-TrY6DsjTQQgyS3E3dBaOXf0TpPD8u9FVrVYmKVegJuFw51n/YB9XPt+U6ydzFG5ZIN7+DIjPbNmXoBj9esYhgQ==}
     dev: true
 
-  /unbuild@1.2.1:
+  /unbuild@1.2.1(sass@1.62.1):
     resolution: {integrity: sha512-J4efk69Aye43tWcBPCsLK7TIRppGrEN4pAlDzRKo3HSE6MgTSTBxSEuE3ccx7ixc62JvGQ/CoFXYqqF2AHozow==}
     hasBin: true
     dependencies:
@@ -4404,7 +4419,7 @@ packages:
       hookable: 5.5.3
       jiti: 1.18.2
       magic-string: 0.30.0
-      mkdist: 1.2.0(typescript@5.0.4)
+      mkdist: 1.2.0(sass@1.62.1)(typescript@5.0.4)
       mlly: 1.3.0
       mri: 1.2.0
       pathe: 1.1.0
@@ -4608,13 +4623,13 @@ packages:
       merge-anything: 5.1.7
       solid-js: 1.7.5
       solid-refresh: 0.4.3(solid-js@1.7.5)
-      vite: 4.1.1(@types/node@20.2.5)
+      vite: 4.1.1(@types/node@20.2.5)(sass@1.62.1)
       vitefu: 0.2.4(vite@4.1.1)
     transitivePeerDependencies:
       - supports-color
     dev: true
 
-  /vite@4.1.1(@types/node@20.2.5):
+  /vite@4.1.1(@types/node@20.2.5)(sass@1.62.1):
     resolution: {integrity: sha512-LM9WWea8vsxhr782r9ntg+bhSFS06FJgCvvB0+8hf8UWtvaiDagKYWXndjfX6kGl74keHJUcpzrQliDXZlF5yg==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
@@ -4644,6 +4659,7 @@ packages:
       postcss: 8.4.24
       resolve: 1.22.2
       rollup: 3.23.0
+      sass: 1.62.1
     optionalDependencies:
       fsevents: 2.3.2
     dev: true
@@ -4656,7 +4672,7 @@ packages:
       vite:
         optional: true
     dependencies:
-      vite: 4.1.1(@types/node@20.2.5)
+      vite: 4.1.1(@types/node@20.2.5)(sass@1.62.1)
     dev: true
 
   /which-module@1.0.0:

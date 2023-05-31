@@ -15,6 +15,7 @@ const App: Component = () => {
           class={styles.link}
           href="https://github.com/solidjs/solid"
           target="_blank"
+          style={{ color: 'var(--ant-color-red-9)' }}
           rel="noopener noreferrer"
         >
           Learn Solid

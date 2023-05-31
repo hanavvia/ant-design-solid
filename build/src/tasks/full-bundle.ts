@@ -9,17 +9,28 @@ import esbuild, { minify as minifyPlugin } from 'rollup-plugin-esbuild'
 import { target } from '../build-info'
 import { writeBundles, formatBundleFilename, withTaskName } from '../utils'
 import { parallel } from 'gulp'
+import babel from '@rollup/plugin-babel'
 
 const banner = `/*! Ant Design Solid v1.0.0 */\n`
 
+const extensions = ['.mjs', '.js', '.json', '.ts', '.tsx']
+
 const buildFullEntry = async (minify: boolean) => {
-    
+
     const plugins: Plugin[] = [
         commonjs(),
         nodeResolve({
-            extensions: ['.mjs', '.js', '.json', '.ts', '.tsx'],
+            extensions,
         }),
-        typescript(),
+        babel({
+            presets: [
+                "solid",
+                "@babel/typescript"
+            ],
+            extensions,
+            babelHelpers: 'bundled'
+        }),
+        // typescript(),
         esbuild({
             exclude: [],
             sourceMap: minify,
@@ -79,9 +90,9 @@ const buildFullLocale = (minify: boolean) => {
 }
 
 export const buildFull = (minify: boolean) => async () =>
-  Promise.all([buildFullEntry(minify), buildFullLocale(minify)])
+    Promise.all([buildFullEntry(minify), buildFullLocale(minify)])
 
 export const buildFullBundle = parallel(
-  withTaskName('buildFullMinified', buildFull(true)),
-  withTaskName('buildFull', buildFull(false))
+    withTaskName('buildFullMinified', buildFull(true)),
+    withTaskName('buildFull', buildFull(false))
 )

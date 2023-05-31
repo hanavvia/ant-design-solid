@@ -4,7 +4,6 @@ import { ANTD_OUTPUT, PKG_ANT } from '../paths'
 import { resolve } from 'path'
 import commonjs from '@rollup/plugin-commonjs'
 import { nodeResolve } from '@rollup/plugin-node-resolve'
-import typescript from '@rollup/plugin-typescript';
 import esbuild, { minify as minifyPlugin } from 'rollup-plugin-esbuild'
 import { target } from '../build-info'
 import { writeBundles, formatBundleFilename, withTaskName } from '../utils'

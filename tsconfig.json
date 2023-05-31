@@ -6,7 +6,6 @@
       "jsx": "preserve",
       "jsxImportSource": "solid-js",
       "strict": true,
-      "baseUrl": ".",
       "esModuleInterop": true,
       "skipLibCheck": true,
       "forceConsistentCasingInFileNames": true

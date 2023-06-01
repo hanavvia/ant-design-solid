@@ -1,24 +1,23 @@
+@use 'sass:map';
 @use './common.scss' as *;
 // https://ant.design/docs/spec/colors-cn
-
-// Dust Red / 薄暮
-$reds: #fff1f0, #ffccc7, #ffa39e, #ff7875, #ff4d4f, #f5222d, #cf1322, #a8071a,
-  #820014, #5c0011;
-
-// Volcano / 火山
-$volcano: #fff2e8, #ffd8bf, #ffbb96, #ff9c6e, #ff7a45, #fa541c, #d4380d, #ad2102,
-  #871400, #610b00;
-
-// Sunset Orange / 日暮
-
+$colors: (
+  red: (#fff2e8, #ffd8bf, #ffbb96, #ff9c6e, #ff7a45, #fa541c, #d4380d, #ad2102,
+    #871400, #610b00),
+  volcano: (#fff2e8, #ffd8bf, #ffbb96, #ff9c6e, #ff7a45, #fa541c, #d4380d, #ad2102,
+    #871400, #610b00),
+  orange: (#fff7e6, #ffe7ba, #ffd591, #ffc069, #ffa940, #fa8c16, #d46b08, #ad4e00,
+    #873800, #612500)
+);
 
 :root {
-  @each $c in $reds {
-    $index: index($reds, $c);
-    --#{$namespace}-color-red-#{$index}: #{$c};
-  }
-  @each $c in $volcano {
-    $index: index($volcano, $c);
-    --#{$namespace}-color-volcano-#{$index}: #{$c};
+
+  @each $name in map-keys($colors) {
+    $color: map-get($colors, $name);
+
+    @each $color-level in $color {
+      $index: index($color, $color-level);
+      --#{$namespace}-color-#{"" + $name}-#{$index}: #{$color-level};
+    }
   }
 }

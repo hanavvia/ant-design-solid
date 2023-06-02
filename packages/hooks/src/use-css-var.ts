@@ -1,3 +1,3 @@
-export const useCssVar = () => {
-  return {}
-}
+// export const useCssVar = (prop: MaybeAccssor<s>) => {
+//   return {}
+// }

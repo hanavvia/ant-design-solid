@@ -6,6 +6,7 @@ importers:
     specifiers:
       '@ant-design-solid/component': workspace:*
       '@ant-design-solid/hooks': workspace:*
+      '@ant-design-solid/shared': workspace:*
       '@ant-design-solid/theme-chalk': workspace:*
       '@ant-design/colors': ^7.0.0
       '@types/node': ^20.2.5
@@ -24,6 +25,7 @@ importers:
     dependencies:
       '@ant-design-solid/component': link:packages/component
       '@ant-design-solid/hooks': link:packages/hooks
+      '@ant-design-solid/shared': link:packages/shared
       '@ant-design-solid/theme-chalk': link:packages/theme-chalk
     devDependencies:
       '@ant-design/colors': 7.0.0
@@ -89,6 +91,9 @@ importers:
     specifiers: {}
 
   packages/hooks:
+    specifiers: {}
+
+  packages/shared:
     specifiers: {}
 
   packages/theme-chalk:

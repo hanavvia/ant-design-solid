@@ -6,7 +6,7 @@ import {
 
 export default () => {
   return (
-    <ConfigProvider color={{ primary: 'blue' }}>
+    <ConfigProvider>
       <Button>按钮</Button>
     </ConfigProvider>
   )

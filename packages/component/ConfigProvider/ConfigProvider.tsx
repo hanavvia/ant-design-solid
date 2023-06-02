@@ -1,4 +1,4 @@
-import { Component, JSX, createContext, useContext } from 'solid-js'
+import { Component, JSX, createContext, mergeProps, useContext } from 'solid-js'
 import { children } from 'solid-js'
 import {
   red,
@@ -61,8 +61,9 @@ export const useConfigProvider = () =>
   useContext<IConfigProviderContext | undefined>(ConfigProviderContext)
 
 export const ConfigProvider: Component<ConfigProviderProps> = (props) => {
+  const merged = mergeProps(defaultConfigProviderContext, props)
   return (
-    <ConfigProviderContext.Provider value={props}>
+    <ConfigProviderContext.Provider value={merged}>
       {children(() => props.children)()}
     </ConfigProviderContext.Provider>
   )

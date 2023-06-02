@@ -1,16 +1,20 @@
+import { setGlobalConfig, useGlobalConfig } from '@ant-design-solid/hooks'
 import type { Component, JSX } from 'solid-js'
 import { children } from 'solid-js'
-import { useConfigProvider } from '..'
 
 export interface ButtonProps {
   children?: JSX.Element
 }
 
 export const Button: Component<ButtonProps> = (props) => {
-  const p = useConfigProvider()
+  const ns = useGlobalConfig()
   return (
-    <button>
-      {p?.color?.primary}
+    <button
+      onClick={() => {
+        setGlobalConfig('namespace', 'el')
+      }}
+    >
+      {ns.namespace}
       {children(() => props.children)()}
     </button>
   )

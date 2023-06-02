@@ -16,6 +16,7 @@ import {
   grey,
   gray
 } from '@ant-design/colors'
+import { NAMESPACE } from '@ant-design-solid/shared'
 
 export const defaultColorPrimaries = {
   red: red.primary,
@@ -36,6 +37,7 @@ export const defaultColorPrimaries = {
 
 export type ColorPrimaries = keyof typeof defaultColorPrimaries
 export interface IConfigProviderContext {
+  namespace?: string
   color?: {
     primaries?: Partial<{
       [K in ColorPrimaries]: string
@@ -45,6 +47,7 @@ export interface IConfigProviderContext {
 }
 
 export const defaultConfigProviderContext: IConfigProviderContext = {
+  namespace: NAMESPACE,
   color: {
     primaries: defaultColorPrimaries,
     primary: defaultColorPrimaries.blue

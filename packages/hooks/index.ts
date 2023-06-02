@@ -1,1 +1,1 @@
-export * from './src/use-css-var'
+export * from './src/use-global-config'

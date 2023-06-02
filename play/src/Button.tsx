@@ -1,7 +1,6 @@
 import {
   Button,
   ConfigProvider,
-  useConfigProvider
 } from '@ant-design-solid/component'
 
 export default () => {

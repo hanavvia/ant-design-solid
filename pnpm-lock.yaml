@@ -5,7 +5,9 @@ importers:
   .:
     specifiers:
       '@ant-design-solid/component': workspace:*
+      '@ant-design-solid/hooks': workspace:*
       '@ant-design-solid/theme-chalk': workspace:*
+      '@ant-design/colors': ^7.0.0
       '@types/node': ^20.2.5
       '@typescript-eslint/eslint-plugin': ^5.59.8
       '@typescript-eslint/parser': ^5.59.8
@@ -21,8 +23,10 @@ importers:
       vite-plugin-solid: ^2.5.0
     dependencies:
       '@ant-design-solid/component': link:packages/component
+      '@ant-design-solid/hooks': link:packages/hooks
       '@ant-design-solid/theme-chalk': link:packages/theme-chalk
     devDependencies:
+      '@ant-design/colors': 7.0.0
       '@types/node': 20.2.5
       '@typescript-eslint/eslint-plugin': 5.59.8_hnhvdstanz2zc7wdbtnhvs2o7u
       '@typescript-eslint/parser': 5.59.8_opaykosi7ysrbskpnffskmbrki
@@ -84,6 +88,9 @@ importers:
   packages/component:
     specifiers: {}
 
+  packages/hooks:
+    specifiers: {}
+
   packages/theme-chalk:
     specifiers: {}
 
@@ -101,6 +108,12 @@ packages:
     dependencies:
       '@jridgewell/gen-mapping': 0.3.3
       '@jridgewell/trace-mapping': 0.3.18
+
+  /@ant-design/colors/7.0.0:
+    resolution: {integrity: sha512-iVm/9PfGCbC0dSMBrz7oiEXZaaGH7ceU40OJEfKmyuzR9R5CRimJYPlRiFtMQGQcbNMea/ePcoIebi4ASGYXtg==}
+    dependencies:
+      '@ctrl/tinycolor': 3.6.0
+    dev: true
 
   /@babel/code-frame/7.21.4:
     resolution: {integrity: sha512-LYvhNKfwWSPpocw8GI7gpK2nq3HSDuEPC/uSYaALSJu9xjsalaaYFOq0Pwt5KmVqwEbZlDu81aLXwBOmD/Fv9g==}
@@ -406,6 +419,11 @@ packages:
       '@babel/helper-string-parser': 7.21.5
       '@babel/helper-validator-identifier': 7.19.1
       to-fast-properties: 2.0.0
+
+  /@ctrl/tinycolor/3.6.0:
+    resolution: {integrity: sha512-/Z3l6pXthq0JvMYdUFyX9j0MaCltlIn6mfh9jLyQwg5aPKxkyNa0PTHtU1AlFXLNk55ZuAeJRcpvq+tmLfKmaQ==}
+    engines: {node: '>=10'}
+    dev: true
 
   /@esbuild-kit/cjs-loader/2.4.2:
     resolution: {integrity: sha512-BDXFbYOJzT/NBEtp71cvsrGPwGAMGRB/349rwKuoxNSiKjPraNNnlK6MIIabViCjqZugu6j+xeMDlEkWdHHJSg==}

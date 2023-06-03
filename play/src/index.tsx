@@ -3,7 +3,9 @@ import { render } from 'solid-js/web'
 
 import './index.css'
 import '@ant-design-solid/theme-chalk/src/index.scss'
+import AntDesignSolid from 'ant-design-solid'
 ;(async () => {
+  AntDesignSolid.setup()
   const root = document.getElementById('root')
   if (import.meta.env.DEV && !(root instanceof HTMLElement)) {
     throw new Error(

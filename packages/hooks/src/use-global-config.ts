@@ -1,13 +1,13 @@
 import { Accessor } from 'solid-js'
 import { createStore } from 'solid-js/store'
-import { NAMESPACE, Size } from '@ant-design-solid/shared'
+import { NAMESPACE, ComponentSize, keysOf } from '@ant-design-solid/shared'
 
 export type Color = {
   red: string
 }
 
 export interface GlobalConfig {
-  size?: Size
+  size?: ComponentSize
   namespace?: string
   color?: Color
 }
@@ -19,6 +19,16 @@ export const defaultGlobalConfig: GlobalConfig = {
 
 const [globalConfig, setGlobalConfig] =
   createStore<GlobalConfig>(defaultGlobalConfig)
+
+export const setGlobaConfigEntirely = (config?: GlobalConfig) => {
+  if (config) {
+    keysOf(config).forEach((key) => {
+      if (config[key]) {
+        setGlobalConfig(key, config[key])
+      }
+    })
+  }
+}
 
 export function useGlobalConfig<
   K extends keyof GlobalConfig,

@@ -60,12 +60,16 @@ export const Button: Component<ButtonProps> = (props) => {
   const clz = () =>
     classnames([
       ns.b(),
-      ns.em('type', withDefaultProps.type),
-      ns.em('size', withDefaultProps.size),
-      ns.em('shape', withDefaultProps.shape),
+      ns.m(`type-${withDefaultProps.type}`),
+      ns.m(`size-${withDefaultProps.size}`),
+      ns.m(`shape-${withDefaultProps.shape}`),
       ns.is('disabled', withDefaultProps.disabled),
       ns.is('loading', !!withDefaultProps.loading)
     ])
+
+  const styles = () => {
+    return {}
+  }
   const clickHandler = (event: MouseEvent) => {
     if (!withDefaultProps.disabled) {
       withDefaultProps.onClick?.(event)

@@ -1,2 +1,5 @@
 export * from './types'
 export * from './constants'
+export * from './is'
+export * from './configurable'
+export * from './solid'

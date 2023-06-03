@@ -4,6 +4,7 @@ export const ROOT = resolve(__dirname, '../../')
 
 export const PKG = resolve(ROOT, 'packages')
 export const PKG_COMPONENT = resolve(PKG, 'component')
+export const PKG_THEME_CHALK = resolve(PKG, 'theme-chalk')
 export const PKG_ANT = resolve(PKG, 'ant-design-solid')
 export const BUILD_ROOT = resolve(ROOT, 'build')
 

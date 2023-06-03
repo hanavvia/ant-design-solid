@@ -1,6 +1,6 @@
 import { Accessor } from 'solid-js'
 import { createStore } from 'solid-js/store'
-import { Size } from '@ant-design-solid/shared'
+import { NAMESPACE, Size } from '@ant-design-solid/shared'
 
 export type Color = {
   red: string
@@ -13,7 +13,7 @@ export interface GlobalConfig {
 }
 
 export const defaultGlobalConfig: GlobalConfig = {
-  namespace: 'ant',
+  namespace: NAMESPACE,
   size: 'middle'
 }
 

@@ -16,9 +16,10 @@
   "license": "ISC",
   "dependencies": {
     "@ant-design-solid/component": "workspace:*",
-    "@ant-design-solid/theme-chalk": "workspace:*",
     "@ant-design-solid/hooks": "workspace:*",
-    "@ant-design-solid/shared": "workspace:*"
+    "@ant-design-solid/shared": "workspace:*",
+    "@ant-design-solid/theme-chalk": "workspace:*",
+    "classnames": "^2.3.2"
   },
   "devDependencies": {
     "@ant-design/colors": "^7.0.0",

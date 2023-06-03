@@ -1,0 +1,7 @@
+@use './var/common.scss' as *;
+
+.#{$namespace}-button__type--primary {
+    color: #fff;
+    background-color: #1677ff;
+    box-shadow: 0 2px 0 rgba(5,145,255,.1);
+}

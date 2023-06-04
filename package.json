@@ -19,6 +19,7 @@
     "@ant-design-solid/hooks": "workspace:*",
     "@ant-design-solid/shared": "workspace:*",
     "@ant-design-solid/theme-chalk": "workspace:*",
+    "@ant-design-solid/icons": "workspace:*",
     "classnames": "^2.3.2"
   },
   "devDependencies": {

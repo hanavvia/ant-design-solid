@@ -1,0 +1,12 @@
+@use 'mixins/mixins' as *;
+
+@include b(icon) {
+  height: 1em;
+  width: 1em;
+  line-height: 1em;
+  text-align: center;
+  display: inline-block;
+  position: relative;
+  fill: currentColor;
+  transform: translateZ(0);
+}

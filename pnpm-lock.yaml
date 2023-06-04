@@ -10,6 +10,9 @@ importers:
       '@ant-design-solid/hooks':
         specifier: workspace:*
         version: link:packages/hooks
+      '@ant-design-solid/icons':
+        specifier: workspace:*
+        version: link:packages/icons
       '@ant-design-solid/shared':
         specifier: workspace:*
         version: link:packages/shared
@@ -129,6 +132,8 @@ importers:
   packages/component: {}
 
   packages/hooks: {}
+
+  packages/icons: {}
 
   packages/shared: {}
 

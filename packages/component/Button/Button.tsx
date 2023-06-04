@@ -64,23 +64,40 @@ export const Button: Component<ButtonProps> = (props) => {
       ns.m(`size-${withDefaultProps.size}`),
       ns.m(`shape-${withDefaultProps.shape}`),
       ns.is('disabled', withDefaultProps.disabled),
-      ns.is('loading', !!withDefaultProps.loading)
+      ns.is('loading', !!withDefaultProps.loading),
+      ns.is(
+        'not-icon-only',
+        !!withDefaultProps.children && !!withDefaultProps.icon
+      )
     ])
-
-  const styles = () => {
-    return {}
-  }
   const clickHandler = (event: MouseEvent) => {
     if (!withDefaultProps.disabled) {
       withDefaultProps.onClick?.(event)
     }
   }
+  const renderTagA = () =>
+    withDefaultProps.type === 'link' && withDefaultProps.href
+  if (renderTagA()) {
+    return (
+      <a
+        class={clz()}
+        target={withDefaultProps.target}
+        href={withDefaultProps.href}
+      >
+        {children(() => props.children)()}
+      </a>
+    )
+  }
+  const icon = withDefaultProps.icon ? (
+    <span class={ns.e('icon')}> {withDefaultProps.icon} </span>
+  ) : null
   return (
     <button
       type={withDefaultProps.htmlType}
       class={clz()}
       onClick={clickHandler}
     >
+      {icon}
       {children(() => props.children)()}
     </button>
   )

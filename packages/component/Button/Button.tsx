@@ -83,6 +83,7 @@ export const Button: Component<ButtonProps> = (props) => {
         class={clz()}
         target={withDefaultProps.target}
         href={withDefaultProps.href}
+        onClick={clickHandler}
       >
         {children(() => props.children)()}
       </a>

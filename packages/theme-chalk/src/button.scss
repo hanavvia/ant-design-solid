@@ -1,5 +1,6 @@
 @use './var/common' as *;
 @use './mixins/function' as *;
+@use './mixins/config' as *;
 @use 'mixins/mixins' as *;
 
 @include b(button) {
@@ -20,7 +21,6 @@
   touch-action: manipulation;
   color: var(#{getCssVarName('button', 'font-color')});
   font-size: 14px; //TODO
-  height: 32px; //TODO
   padding: 4px 15px; //TODO
   border-radius: var(#{getCssVarName('button', 'border-radius')});
   box-shadow: 0 2px 0 rgba(0, 0, 0, 0.02);
@@ -76,14 +76,51 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    font-size: 16px; // TODO size && css var
+    font-size: 16px;
   }
 
   /* === shape === */
   @include m(shape-circle) {
-    min-width: 32px; // TODO size
     padding-inline-start: 0;
     padding-inline-end: 0;
     border-radius: 50%;
+  }
+
+  /* ===== size ===== */
+  @include m(shape-circle) {
+    &.#{$namespace}#{$common-separator}button#{$modifier-separator}size-small {
+      min-width: var(#{getCssVarName('button', 'height-small')});
+    }
+    &.#{$namespace}#{$common-separator}button#{$modifier-separator}size-middle {
+      min-width: var(#{getCssVarName('button', 'height-middle')});
+    }
+    &.#{$namespace}#{$common-separator}button#{$modifier-separator}size-large {
+      min-width: var(#{getCssVarName('button', 'height-large')});
+    }
+  }
+  @include m(size-small) {
+    font-size: 12px;
+    height: var(#{getCssVarName('button', 'height-small')});
+    @include when(icon-only) {
+      width: var(#{getCssVarName('button', 'height-small')});
+    }
+    @include e(icon) {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+    }
+  }
+  @include m(size-middle) {
+    height: var(#{getCssVarName('button', 'height-middle')});
+    @include when(icon-only) {
+      width: var(#{getCssVarName('button', 'height-middle')});
+    }
+  }
+  @include m(size-large) {
+    height: var(#{getCssVarName('button', 'height-large')});
+    @include when(icon-only) {
+      width: var(#{getCssVarName('button', 'height-large')});
+    }
   }
 }

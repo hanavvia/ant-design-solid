@@ -121,7 +121,7 @@ export default () => {
             </Icon>
           }
         />
-        <Button shape="circle">A</Button>
+        <Button size={size()} shape="circle">A</Button>
         <Button
           size={size()}
           icon={

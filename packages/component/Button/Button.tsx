@@ -68,7 +68,8 @@ export const Button: Component<ButtonProps> = (props) => {
       ns.is(
         'not-icon-only',
         !!withDefaultProps.children && !!withDefaultProps.icon
-      )
+      ),
+      ns.is('icon-only', !withDefaultProps.children && !!withDefaultProps.icon)
     ])
   const clickHandler = (event: MouseEvent) => {
     if (!withDefaultProps.disabled) {

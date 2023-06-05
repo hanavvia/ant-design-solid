@@ -69,16 +69,29 @@ const colorCssVars = (key: keyof typeof colors, color: Color): string => {
   return lines.join('\n')
 }
 
+const antdCssVarGenerator = () => {
+  const tokens = theme.defaultAlgorithm(theme.defaultSeed)
+  const cssVars: string[] = []
+  keysOf(tokens).forEach((key) => {
+    cssVars.push(`  --ant-${key}: ${tokens[key]}`)
+  })
+  return cssVars.join(';\n')
+}
+
 export const generateAntdColorVar = async () => {
-  const defaultR = theme.defaultAlgorithm(theme.defaultSeed)
   const antdColorCssVars: string[] = []
   keysOf(colors).forEach((key) => {
     const color = colors[key]
     antdColorCssVars.push(colorCssVars(key, color))
   })
+  //   const sassContent = `
+  // :root {
+  // ${antdColorCssVars.join('\n')}
+  // }
+  //   `
   const sassContent = `
 :root {
-${antdColorCssVars.join('\n')}
+${antdCssVarGenerator()}
 }
   `
   await writeFile(

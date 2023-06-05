@@ -9,6 +9,7 @@
     "lint:fix": "pnpm run lint --fix",
     "play": "pnpm run -C play dev",
     "stub": "pnpm run -C build stub",
+    "build": "pnpm run -C build start",
     "postinstall": "pnpm stub"
   },
   "keywords": [],
@@ -17,17 +18,19 @@
   "dependencies": {
     "@ant-design-solid/component": "workspace:*",
     "@ant-design-solid/hooks": "workspace:*",
+    "@ant-design-solid/icons": "workspace:*",
     "@ant-design-solid/shared": "workspace:*",
     "@ant-design-solid/theme-chalk": "workspace:*",
-    "@ant-design-solid/icons": "workspace:*",
+    "@ant-design-solid/theme": "workspace:*",
+    "@ctrl/tinycolor": "^3.6.0",
     "classnames": "^2.3.2"
   },
   "devDependencies": {
     "@ant-design/colors": "^7.0.0",
-    "ant-design-solid": "workspace:*",
     "@types/node": "^20.2.5",
     "@typescript-eslint/eslint-plugin": "^5.59.8",
     "@typescript-eslint/parser": "^5.59.8",
+    "ant-design-solid": "workspace:*",
     "eslint": "^8.41.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-prettier": "^4.2.1",

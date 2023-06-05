@@ -17,6 +17,8 @@ import {
   gray
 } from '@ant-design/colors'
 
+import theme from '@ant-design-solid/theme'
+
 import { keysOf } from '@ant-design-solid/shared'
 import { PKG_THEME_CHALK } from '../paths'
 
@@ -68,6 +70,7 @@ const colorCssVars = (key: keyof typeof colors, color: Color): string => {
 }
 
 export const generateAntdColorVar = async () => {
+  const defaultR = theme.defaultAlgorithm(theme.defaultSeed)
   const antdColorCssVars: string[] = []
   keysOf(colors).forEach((key) => {
     const color = colors[key]

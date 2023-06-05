@@ -16,9 +16,15 @@ importers:
       '@ant-design-solid/shared':
         specifier: workspace:*
         version: link:packages/shared
+      '@ant-design-solid/theme':
+        specifier: workspace:*
+        version: link:packages/theme
       '@ant-design-solid/theme-chalk':
         specifier: workspace:*
         version: link:packages/theme-chalk
+      '@ctrl/tinycolor':
+        specifier: ^3.6.0
+        version: 3.6.0
       classnames:
         specifier: ^2.3.2
         version: 2.3.2
@@ -136,6 +142,8 @@ importers:
   packages/icons: {}
 
   packages/shared: {}
+
+  packages/theme: {}
 
   packages/theme-chalk: {}
 
@@ -468,7 +476,6 @@ packages:
   /@ctrl/tinycolor@3.6.0:
     resolution: {integrity: sha512-/Z3l6pXthq0JvMYdUFyX9j0MaCltlIn6mfh9jLyQwg5aPKxkyNa0PTHtU1AlFXLNk55ZuAeJRcpvq+tmLfKmaQ==}
     engines: {node: '>=10'}
-    dev: true
 
   /@esbuild-kit/cjs-loader@2.4.2:
     resolution: {integrity: sha512-BDXFbYOJzT/NBEtp71cvsrGPwGAMGRB/349rwKuoxNSiKjPraNNnlK6MIIabViCjqZugu6j+xeMDlEkWdHHJSg==}

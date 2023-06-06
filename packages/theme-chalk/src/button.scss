@@ -41,6 +41,7 @@
 
     &:hover {
       color: #{getCssVar('button', 'color-primary')};
+      border-color: #{getCssVar('button', 'primary-bg-color-hover')};
       background-color: #{getCssVar('button', 'primary-bg-color-hover')};
     }
   }

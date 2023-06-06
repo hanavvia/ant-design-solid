@@ -8,13 +8,13 @@
 $antd-font: () !default;
 $antd-font: map.merge(
   (
-    'size-primary': 14px,
-    'size-small': 12px,
+    'font-size-primary': 14px,
+    'font-size-small': 12px,
     'icon-size-primary': 16px,
     'icon-size-small': 14px,
-    'weight-regular': 400,
-    'weight-medium': 500,
-    'weight-semiboild': 600
+    'font-weight-regular': 400,
+    'font-weight-medium': 500,
+    'font-weight-semiboild': 600
   ),
   $antd-font
 );

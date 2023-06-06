@@ -35,7 +35,7 @@ const seedToken: SeedToken = {
 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
 'Noto Color Emoji'`,
   fontFamilyCode: `'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace`,
-  fontSize: 14,
+  fontSize: '14px',
 
   // Line
   lineWidth: 1,
@@ -54,15 +54,15 @@ const seedToken: SeedToken = {
   motionEaseOutQuint: 'cubic-bezier(0.23, 1, 0.32, 1)',
 
   // Radius
-  borderRadius: 6,
+  borderRadius: '6px',
 
   // Size
-  sizeUnit: 4,
-  sizeStep: 4,
-  sizePopupArrow: 16,
+  sizeUnit: '4px',
+  sizeStep: '4px',
+  sizePopupArrow: '16px',
 
   // Control Base
-  controlHeight: 32,
+  controlHeight: '32px',
 
   // zIndex
   zIndexBase: 0,

@@ -3,23 +3,27 @@ import type { DerivativeFunc, MapToken, SeedToken } from '../../interface'
 import defaultAlgorithm from '../default'
 import genCompactSizeMapToken from './genCompactSizeMapToken'
 import genFontMapToken from '../shared/genFontMapToken'
+import { pxToNumber } from '../../util/sizeUnit'
 
 const derivative: DerivativeFunc<SeedToken, MapToken> = (token, mapToken) => {
   const mergedMapToken = mapToken ?? defaultAlgorithm(token)
 
   const fontSize = mergedMapToken.fontSizeSM // Smaller size font-size as base
-  const controlHeight = mergedMapToken.controlHeight - 4
+  const controlHeight = `${pxToNumber(mergedMapToken.controlHeight) - 4}px`
 
   return {
     ...mergedMapToken,
     ...genCompactSizeMapToken(mapToken ?? token),
 
     // font
-    ...genFontMapToken(fontSize),
+    ...genFontMapToken(pxToNumber(fontSize)),
 
     // controlHeight
     controlHeight,
-    ...genControlHeight({ ...mergedMapToken, controlHeight })
+    ...genControlHeight({
+      ...mergedMapToken,
+      controlHeight
+    })
   }
 }
 

@@ -444,27 +444,30 @@ export interface AliasToken extends MapToken {
   boxShadowTertiary: string
 
   /**
+   * https://developer.mozilla.org/zh-CN/docs/Web/CSS/text-decoration
    * @nameZH 链接文本装饰
    * @nameEN Link text decoration
    * @desc 控制链接文本的装饰样式。
    * @descEN Control the text decoration style of a link.
    */
   // linkDecoration: React.CSSProperties['textDecoration'];
-  linkDecoration: JSX.CSSProperties['textDecoration']
+  linkDecoration: string
   /**
+   * https://developer.mozilla.org/zh-CN/docs/Web/CSS/text-decoration
    * @nameZH 链接鼠标悬浮时文本装饰
    * @nameEN Link text decoration on mouse hover
    * @desc 控制链接鼠标悬浮时文本的装饰样式。
    * @descEN Control the text decoration style of a link on mouse hover.
    */
-  linkHoverDecoration: JSX.CSSProperties['textDecoration']
+  linkHoverDecoration: string
   /**
+   * https://developer.mozilla.org/zh-CN/docs/Web/CSS/text-decoration
    * @nameZH 链接聚焦时文本装饰
    * @nameEN Link text decoration on focus
    * @desc 控制链接聚焦时文本的装饰样式。
    * @descEN Control the text decoration style of a link on focus.
    */
-  linkFocusDecoration: JSX.CSSProperties['textDecoration']
+  linkFocusDecoration: string
 
   /**
    * @nameZH 控制水平内间距
@@ -472,14 +475,14 @@ export interface AliasToken extends MapToken {
    * @desc 控制元素水平内间距。
    * @descEN Control the horizontal padding of an element.
    */
-  controlPaddingHorizontal: number
+  controlPaddingHorizontal: string
   /**
    * @nameZH 控制中小尺寸水平内间距
    * @nameEN Control horizontal padding with a small-medium size
    * @desc 控制元素中小尺寸水平内间距。
    * @descEN Control the horizontal padding of an element with a small-medium size.
    */
-  controlPaddingHorizontalSM: number
+  controlPaddingHorizontalSM: string
 
   // Media queries breakpoints
   /**
@@ -488,119 +491,119 @@ export interface AliasToken extends MapToken {
    * @desc 控制超小屏幕的屏幕宽度。
    * @descEN Control the screen width of extra small screens.
    */
-  screenXS: number
+  screenXS: string
   /**
    * @nameZH 屏幕宽度（像素） - 超小屏幕最小值
    * @nameEN Screen width (pixels) - Extra small screens minimum value
    * @desc 控制超小屏幕的最小宽度。
    * @descEN Control the minimum width of extra small screens.
    */
-  screenXSMin: number
+  screenXSMin: string
   /**
    * @nameZH 屏幕宽度（像素） - 超小屏幕最大值
    * @nameEN Screen width (pixels) - Extra small screens maximum value
    * @desc 控制超小屏幕的最大宽度。
    * @descEN Control the maximum width of extra small screens.
    */
-  screenXSMax: number
+  screenXSMax: string
   /**
    * @nameZH 屏幕宽度（像素） - 小屏幕
    * @nameEN Screen width (pixels) - Small screens
    * @desc 控制小屏幕的屏幕宽度。
    * @descEN Control the screen width of small screens.
    */
-  screenSM: number
+  screenSM: string
   /**
    * @nameZH 屏幕宽度（像素） - 小屏幕最小值
    * @nameEN Screen width (pixels) - Small screens minimum value
    * @desc 控制小屏幕的最小宽度。
    * @descEN Control the minimum width of small screens.
    */
-  screenSMMin: number
+  screenSMMin: string
   /**
    * @nameZH 屏幕宽度（像素） - 小屏幕最大值
    * @nameEN Screen width (pixels) - Small screens maximum value
    * @desc 控制小屏幕的最大宽度。
    * @descEN Control the maximum width of small screens.
    */
-  screenSMMax: number
+  screenSMMax: string
   /**
    * @nameZH 屏幕宽度（像素） - 中等屏幕
    * @nameEN Screen width (pixels) - Medium screens
    * @desc 控制中等屏幕的屏幕宽度。
    * @descEN Control the screen width of medium screens.
    */
-  screenMD: number
+  screenMD: string
   /**
    * @nameZH 屏幕宽度（像素） - 中等屏幕最小值
    * @nameEN Screen width (pixels) - Medium screens minimum value
    * @desc 控制中等屏幕的最小宽度。
    * @descEN Control the minimum width of medium screens.
    */
-  screenMDMin: number
+  screenMDMin: string
   /**
    * @nameZH 屏幕宽度（像素） - 中等屏幕最大值
    * @nameEN Screen width (pixels) - Medium screens maximum value
    * @desc 控制中等屏幕的最大宽度。
    * @descEN Control the maximum width of medium screens.
    */
-  screenMDMax: number
+  screenMDMax: string
   /**
    * @nameZH 屏幕宽度（像素） - 大屏幕
    * @nameEN Screen width (pixels) - Large screens
    * @desc 控制大屏幕的屏幕宽度。
    * @descEN Control the screen width of large screens.
    */
-  screenLG: number
+  screenLG: string
   /**
    * @nameZH 屏幕宽度（像素） - 大屏幕最小值
    * @nameEN Screen width (pixels) - Large screens minimum value
    * @desc 控制大屏幕的最小宽度。
    * @descEN Control the minimum width of large screens.
    */
-  screenLGMin: number
+  screenLGMin: string
   /**
    * @nameZH 屏幕宽度（像素） - 大屏幕最大值
    * @nameEN Screen width (pixels) - Large screens maximum value
    * @desc 控制大屏幕的最大宽度。
    * @descEN Control the maximum width of large screens.
    */
-  screenLGMax: number
+  screenLGMax: string
   /**
    * @nameZH 屏幕宽度（像素） - 超大屏幕
    * @nameEN Screen width (pixels) - Extra large screens
    * @desc 控制超大屏幕的屏幕宽度。
    * @descEN Control the screen width of extra large screens.
    */
-  screenXL: number
+  screenXL: string
   /**
    * @nameZH 屏幕宽度（像素） - 超大屏幕最小值
    * @nameEN Screen width (pixels) - Extra large screens minimum value
    * @desc 控制超大屏幕的最小宽度。
    * @descEN Control the minimum width of extra large screens.
    */
-  screenXLMin: number
+  screenXLMin: string
   /**
    * @nameZH 屏幕宽度（像素） - 超大屏幕最大值
    * @nameEN Screen width (pixels) - Extra large screens maximum value
    * @desc 控制超大屏幕的最大宽度。
    * @descEN Control the maximum width of extra large screens.
    */
-  screenXLMax: number
+  screenXLMax: string
   /**
    * @nameZH 屏幕宽度（像素） - 超超大屏幕
    * @nameEN Screen width (pixels) - Extra extra large screens
    * @desc 控制超超大屏幕的屏幕宽度。
    * @descEN Control the screen width of extra extra large screens.
    */
-  screenXXL: number
+  screenXXL: string
   /**
    * @nameZH 屏幕宽度（像素） - 超超大屏幕最小值
    * @nameEN Screen width (pixels) - Extra extra large screens minimum value
    * @desc 控制超超大屏幕的最小宽度。
    * @descEN Control the minimum width of extra extra large screens.
    */
-  screenXXLMin: number
+  screenXXLMin: string
 
   /**
    * Used for DefaultButton, Switch which has default outline

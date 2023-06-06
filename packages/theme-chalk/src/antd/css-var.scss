@@ -24,7 +24,7 @@
 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
 'Noto Color Emoji';
   --ant-font-family-code: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
-  --ant-font-size: 14px;
+  --ant-font-size: 14;
   --ant-line-width: 1;
   --ant-line-type: solid;
   --ant-motion-unit: 0.1;
@@ -37,11 +37,11 @@
   --ant-motion-ease-in-back: cubic-bezier(0.71, -0.46, 0.88, 0.6);
   --ant-motion-ease-in-quint: cubic-bezier(0.755, 0.05, 0.855, 0.06);
   --ant-motion-ease-out-quint: cubic-bezier(0.23, 1, 0.32, 1);
-  --ant-border-radius: 6px;
-  --ant-size-unit: 4px;
-  --ant-size-step: 4px;
-  --ant-size-popup-arrow: 16px;
-  --ant-control-height: 32px;
+  --ant-border-radius: 6;
+  --ant-size-unit: 4;
+  --ant-size-step: 4;
+  --ant-size-popup-arrow: 16;
+  --ant-control-height: 32;
   --ant-z-index-base: 0;
   --ant-z-index-popup-base: 1000;
   --ant-opacity-image: 1;
@@ -368,14 +368,14 @@
   --ant-color-info-text-active: #0958d9;
   --ant-color-bg-mask: rgba(0, 0, 0, 0.45);
   --ant-color-white: #fff;
-  --ant-font-size-sm: 12px;
-  --ant-font-size-lg: 16px;
-  --ant-font-size-xl: 20px;
-  --ant-font-size-heading1: 38px;
-  --ant-font-size-heading2: 30px;
-  --ant-font-size-heading3: 24px;
-  --ant-font-size-heading4: 20px;
-  --ant-font-size-heading5: 16px;
+  --ant-font-size-sm: 12;
+  --ant-font-size-lg: 16;
+  --ant-font-size-xl: 20;
+  --ant-font-size-heading1: 38;
+  --ant-font-size-heading2: 30;
+  --ant-font-size-heading3: 24;
+  --ant-font-size-heading4: 20;
+  --ant-font-size-heading5: 16;
   --ant-line-height: 1.5714285714285714;
   --ant-line-height-lg: 1.5;
   --ant-line-height-sm: 1.6666666666666667;
@@ -384,15 +384,15 @@
   --ant-line-height-heading3: 1.3333333333333333;
   --ant-line-height-heading4: 1.4;
   --ant-line-height-heading5: 1.5;
-  --ant-size-xxl: 48px;
-  --ant-size-xl: 32px;
-  --ant-size-lg: 24px;
-  --ant-size-md: 20px;
-  --ant-size-ms: 16px;
-  --ant-size: 16px;
-  --ant-size-sm: 12px;
-  --ant-size-xs: 8px;
-  --ant-size-xxs: 4px;
+  --ant-size-xxl: 48;
+  --ant-size-xl: 32;
+  --ant-size-lg: 24;
+  --ant-size-md: 20;
+  --ant-size-ms: 16;
+  --ant-size: 16;
+  --ant-size-sm: 12;
+  --ant-size-xs: 8;
+  --ant-size-xxs: 4;
   --ant-control-height-sm: 24;
   --ant-control-height-xs: 16;
   --ant-control-height-lg: 40;
@@ -400,9 +400,9 @@
   --ant-motion-duration-mid: 0.2s;
   --ant-motion-duration-slow: 0.3s;
   --ant-line-width-bold: 2;
-  --ant-border-radius-xs: 2px;
-  --ant-border-radius-sm: 4px;
-  --ant-border-radius-lg: 8px;
-  --ant-border-radius-outer: 4px
+  --ant-border-radius-xs: 2;
+  --ant-border-radius-sm: 4;
+  --ant-border-radius-lg: 8;
+  --ant-border-radius-outer: 4
 }
   

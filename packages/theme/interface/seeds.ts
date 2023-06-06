@@ -86,9 +86,9 @@ export interface SeedToken extends PresetColorType {
    * @nameEN Default Font Size
    * @desc 设计系统中使用最广泛的字体大小，文本梯度也将基于该字号进行派生。
    * @descEN The most widely used font size in the design system, from which the text gradient will be derived.
-   * @default 14
+   * @default 14px
    */
-  fontSize: number
+  fontSize: string
 
   //  ----------   Line   ---------- //
 
@@ -115,8 +115,9 @@ export interface SeedToken extends PresetColorType {
    * @nameEN Base Border Radius
    * @descEN Border radius of base components
    * @desc 基础组件的圆角大小，例如按钮、输入框、卡片等
+   * @default 6px
    */
-  borderRadius: number
+  borderRadius: string
 
   //  ----------   Size   ---------- //
 
@@ -125,34 +126,34 @@ export interface SeedToken extends PresetColorType {
    * @nameEN Size Change Unit
    * @desc 用于控制组件尺寸的变化单位，在 Ant Design 中我们的基础单位为 4 ，便于更加细致地控制尺寸梯度
    * @descEN The unit of size change, in Ant Design, our base unit is 4, which is more fine-grained control of the size step
-   * @default 4
+   * @default 4px
    */
-  sizeUnit: number
+  sizeUnit: string
 
   /**
    * @nameZH 尺寸步长
    * @nameEN Size Base Step
    * @desc 用于控制组件尺寸的基础步长，尺寸步长结合尺寸变化单位，就可以派生各种尺寸梯度。通过调整步长即可得到不同的布局模式，例如 V5 紧凑模式下的尺寸步长为 2
    * @descEN The base step of size change, the size step combined with the size change unit, can derive various size steps. By adjusting the step, you can get different layout modes, such as the size step of the compact mode of V5 is 2
-   * @default 4
+   * @default 4px
    */
-  sizeStep: number
+  sizeStep: string
 
   /**
    * @nameZH 组件箭头尺寸
    * @desc 组件箭头的尺寸
    * @descEN The size of the component arrow
    */
-  sizePopupArrow: number
+  sizePopupArrow: string
 
   /**
    * @nameZH 基础高度
    * @nameEN Base Control Height
    * @desc Ant Design 中按钮和输入框等基础控件的高度
    * @descEN The height of the basic controls such as buttons and input boxes in Ant Design
-   * @default 32
+   * @default 32px
    */
-  controlHeight: number
+  controlHeight: string
 
   //  ----------   zIndex   ---------- //
 

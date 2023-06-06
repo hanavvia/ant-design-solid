@@ -1,4 +1,5 @@
 import type { CommonMapToken, SeedToken } from '../../interface'
+import { pxToNumber } from '../../util/sizeUnit'
 import genRadius from './genRadius'
 
 export default function genCommonMapToken(token: SeedToken): CommonMapToken {
@@ -14,6 +15,6 @@ export default function genCommonMapToken(token: SeedToken): CommonMapToken {
     lineWidthBold: lineWidth + 1,
 
     // radius
-    ...genRadius(borderRadius)
+    ...genRadius(pxToNumber(borderRadius))
   }
 }

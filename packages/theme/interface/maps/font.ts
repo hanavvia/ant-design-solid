@@ -4,22 +4,22 @@ export interface FontMapToken {
    * @desc 小号字体大小
    * @descEN Small font size
    */
-  fontSizeSM: number
+  fontSizeSM: string
   /**
    * @desc 标准字体大小
    * @descEN Standard font size
    */
-  fontSize: number
+  fontSize: string
   /**
    * @desc 大号字体大小
    * @descEN Large font size
    */
-  fontSizeLG: number
+  fontSizeLG: string
   /**
    * @desc 超大号字体大小
    * @descEN Super large font size
    */
-  fontSizeXL: number
+  fontSizeXL: string
 
   /**
    * @nameZH 一级标题字号
@@ -28,7 +28,7 @@ export interface FontMapToken {
    * @descEN Font size of h1 tag.
    * @default 38
    */
-  fontSizeHeading1: number
+  fontSizeHeading1: string
   /**
    * @nameZH 二级标题字号
    * @nameEN Font size of heading level 2
@@ -36,7 +36,7 @@ export interface FontMapToken {
    * @descEN Font size of h2 tag.
    * @default 30
    */
-  fontSizeHeading2: number
+  fontSizeHeading2: string
   /**
    * @nameZH 三级标题字号
    * @nameEN Font size of heading level 3
@@ -44,7 +44,7 @@ export interface FontMapToken {
    * @descEN Font size of h3 tag.
    * @default 24
    */
-  fontSizeHeading3: number
+  fontSizeHeading3: string
   /**
    * @nameZH 四级标题字号
    * @nameEN Font size of heading level 4
@@ -52,7 +52,7 @@ export interface FontMapToken {
    * @descEN Font size of h4 tag.
    * @default 20
    */
-  fontSizeHeading4: number
+  fontSizeHeading4: string
   /**
    * @nameZH 五级标题字号
    * @nameEN Font size of heading level 5
@@ -60,7 +60,7 @@ export interface FontMapToken {
    * @descEN Font size of h5 tag.
    * @default 16
    */
-  fontSizeHeading5: number
+  fontSizeHeading5: string
 
   // LineHeight
   /**

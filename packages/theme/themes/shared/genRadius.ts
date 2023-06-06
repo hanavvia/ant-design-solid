@@ -1,4 +1,5 @@
 import type { MapToken } from '../../interface'
+import { numberToPxVal } from '../../util/sizeUnit'
 
 const genRadius = (
   radiusBase: number
@@ -52,11 +53,11 @@ const genRadius = (
   }
 
   return {
-    borderRadius: radiusBase > 16 ? 16 : radiusBase,
-    borderRadiusXS: radiusXS,
-    borderRadiusSM: radiusSM,
-    borderRadiusLG: radiusLG,
-    borderRadiusOuter: radiusOuter
+    borderRadius: numberToPxVal(radiusBase > 16 ? 16 : radiusBase),
+    borderRadiusXS: numberToPxVal(radiusXS),
+    borderRadiusSM: numberToPxVal(radiusSM),
+    borderRadiusLG: numberToPxVal(radiusLG),
+    borderRadiusOuter: numberToPxVal(radiusOuter)
   }
 }
 

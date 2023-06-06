@@ -19,8 +19,9 @@ import {
 
 import theme from '@ant-design-solid/theme'
 
-import { keysOf } from '@ant-design-solid/shared'
+import { camelToStrike, keysOf } from '@ant-design-solid/shared'
 import { PKG_THEME_CHALK } from '../paths'
+import { camelCase } from 'lodash-es'
 
 type Color = string[] & {
   primary?: string | undefined
@@ -62,9 +63,9 @@ export const colorPrimaries = {
 
 const colorCssVars = (key: keyof typeof colors, color: Color): string => {
   const lines: string[] = []
-  lines.push(`  --ant-color-${key}-primary: ${color.primary};`)
+  lines.push(`  --ant-color-${camelToStrike(key)}-primary: ${color.primary};`)
   color.forEach((val, index) => {
-    lines.push(`  --ant-color-${key}-${index + 1}: ${val};`)
+    lines.push(`  --ant-color-${camelToStrike(key)}-${index + 1}: ${val};`)
   })
   return lines.join('\n')
 }
@@ -73,7 +74,7 @@ const antdCssVarGenerator = () => {
   const tokens = theme.defaultAlgorithm(theme.defaultSeed)
   const cssVars: string[] = []
   keysOf(tokens).forEach((key) => {
-    cssVars.push(`  --ant-${key}: ${tokens[key]}`)
+    cssVars.push(`  --ant-${camelToStrike(camelCase(key))}: ${tokens[key]}`)
   })
   return cssVars.join(';\n')
 }

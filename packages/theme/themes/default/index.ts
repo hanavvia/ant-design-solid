@@ -14,6 +14,7 @@ import genCommonMapToken from '../shared/genCommonMapToken'
 import { generateColorPalettes, generateNeutralColorPalettes } from './colors'
 import genFontMapToken from '../shared/genFontMapToken'
 import { keysOf } from '@ant-design-solid/shared'
+import { pxToNumber } from '../../util/sizeUnit'
 
 export default function derivative(token: SeedToken): MapToken {
   const colorPalettes = keysOf(defaultPresetColors)
@@ -43,7 +44,7 @@ export default function derivative(token: SeedToken): MapToken {
       generateNeutralColorPalettes
     }),
     // Font
-    ...genFontMapToken(token.fontSize),
+    ...genFontMapToken(pxToNumber(token.fontSize)),
     // Size
     ...genSizeMapToken(token),
     // Height

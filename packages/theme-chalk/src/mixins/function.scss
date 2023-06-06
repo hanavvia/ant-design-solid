@@ -55,6 +55,16 @@
   @return $name;
 }
 
+@function joinAntVarName($list) {
+  $name: '--ant';
+  @each $item in $list {
+    @if $item != '' {
+      $name: $name + '-' + $item;
+    }
+  }
+  @return $name;
+}
+
 // getCssVarName('button', 'text-color') => '--ant-button-text-color'
 @function getCssVarName($args...) {
   @return joinVarName($args);
@@ -63,6 +73,9 @@
 // getCssVar('button', 'text-color') => var(--ant-button-text-color)
 @function getCssVar($args...) {
   @return var(#{joinVarName($args)});
+}
+@function getAntCssVar($args...) {
+  @return var(#{joinAntVarName($args)});
 }
 
 // getCssVarWithDefault(('button', 'text-color'), red) => var(--ant-button-text-color, red)

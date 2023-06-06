@@ -1,19 +1,20 @@
 import type { SeedToken, SizeMapToken } from '../../interface'
+import { numberToPxVal, pxToNumber } from '../../util/sizeUnit'
 
 export default function genSizeMapToken(token: SeedToken): SizeMapToken {
   const { sizeUnit, sizeStep } = token
 
-  const compactSizeStep = sizeStep - 2
-
+  const compactSizeStep = pxToNumber(sizeStep) - 2
+  const sizeUnitNumber = pxToNumber(sizeUnit)
   return {
-    sizeXXL: sizeUnit * (compactSizeStep + 10),
-    sizeXL: sizeUnit * (compactSizeStep + 6),
-    sizeLG: sizeUnit * (compactSizeStep + 2),
-    sizeMD: sizeUnit * (compactSizeStep + 2),
-    sizeMS: sizeUnit * (compactSizeStep + 1),
-    size: sizeUnit * compactSizeStep,
-    sizeSM: sizeUnit * compactSizeStep,
-    sizeXS: sizeUnit * (compactSizeStep - 1),
-    sizeXXS: sizeUnit * (compactSizeStep - 1)
+    sizeXXL: numberToPxVal(sizeUnitNumber * (compactSizeStep + 10)),
+    sizeXL: numberToPxVal(sizeUnitNumber * (compactSizeStep + 6)),
+    sizeLG: numberToPxVal(sizeUnitNumber * (compactSizeStep + 2)),
+    sizeMD: numberToPxVal(sizeUnitNumber * (compactSizeStep + 2)),
+    sizeMS: numberToPxVal(sizeUnitNumber * (compactSizeStep + 1)),
+    size: numberToPxVal(sizeUnitNumber * compactSizeStep),
+    sizeSM: numberToPxVal(sizeUnitNumber * compactSizeStep),
+    sizeXS: numberToPxVal(sizeUnitNumber * (compactSizeStep - 1)),
+    sizeXXS: numberToPxVal(sizeUnitNumber * (compactSizeStep - 1))
   }
 }

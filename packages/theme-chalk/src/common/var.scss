@@ -1,29 +1,45 @@
 @use 'sass:map';
 
-@use '../mixins/function.scss' as *;
+@use '../mixins/function' as *;
 
-// Button
-// css3 var in packages/theme-chalk/src/button.scss
+/* === antd font === */
+// https://ant.design/docs/spec/font-cn
+// custom: size-small、icon-size-small
+$antd-font: () !default;
+$antd-font: map.merge(
+  (
+    'size-primary': 14px,
+    'size-small': 12px,
+    'icon-size-primary': 16px,
+    'icon-size-small': 14px,
+    'weight-regular': 400,
+    'weight-medium': 500,
+    'weight-semiboild': 600
+  ),
+  $antd-font
+);
+
 $button: () !default;
 $button: map.merge(
   (
-    'font-weight': getCssVar('font-weight-primary'),
-    'border-color': getCssVar('border-color'),
-    'bg-color': getCssVar('fill-color', 'blank'),
-    'text-color': getCssVar('text-color', 'regular'),
-    'disabled-text-color': getCssVar('disabled-text-color'),
-    'disabled-bg-color': getCssVar('fill-color', 'blank'),
-    'disabled-border-color': getCssVar('border-color-light'),
-    'divide-border-color': rgba($color-white, 0.5),
-    'hover-text-color': getCssVar('color-primary'),
-    'hover-bg-color': getCssVar('color-primary', 'light-9'),
-    'hover-border-color': getCssVar('color-primary-light-7'),
-    'active-text-color': getCssVar('button-hover-text-color'),
-    'active-border-color': getCssVar('color-primary'),
-    'active-bg-color': getCssVar('button', 'hover-bg-color'),
-    'outline-color': getCssVar('color-primary', 'light-5'),
-    'hover-link-text-color': getCssVar('color-info'),
-    'active-color': getCssVar('text-color', 'primary')
+    'font-size': #{getAntCssVar('font', 'size-primary')},
+    'font-size-small': #{getAntCssVar('font', 'size-small')},
+    'font-weight': #{getAntCssVar('font', 'weight-regular')},
+    'icon-size-primary': #{getAntCssVar('font', 'icon-size-primary')},
+    'icon-size-small': #{getAntCssVar('font', 'icon-size-small')},
+    'color': #{getAntCssVar('color', 'text-base')},
+    'color-primary': #{getAntCssVar('color', 'white')},
+    'border-radius': #{getAntCssVar('border-radius')},
+    'border-color': #{getAntCssVar('color-border')},
+    'primary-bg-color': #{getAntCssVar('color-primary')},
+    'primary-bg-color-hover': #{getAntCssVar('color-primary-hover')},
+    'text-bg-color': transparent,
+    'text-bg-color-hover': rgba(0,0,0,.06),
+    'link-color': #{getAntCssVar('color','primary')},
+    'link-color-hover': #{getAntCssVar('color', 'primary-border-hover')},
+    'height-small': 24px,
+    'height-middle': 32px,
+    'height-large': 40px,
   ),
   $button
 );

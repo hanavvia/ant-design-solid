@@ -3,45 +3,45 @@ export interface SizeMapToken {
    * @nameZH XXL
    * @default 48
    */
-  sizeXXL: number
+  sizeXXL: string
   /**
    * @nameZH XL
    * @default 32
    */
-  sizeXL: number
+  sizeXL: string
   /**
    * @nameZH LG
    * @default 24
    */
-  sizeLG: number
+  sizeLG: string
   /**
    * @nameZH MD
    * @default 20
    */
-  sizeMD: number
+  sizeMD: string
   /** Same as size by default, but could be larger in compact mode */
-  sizeMS: number
+  sizeMS: string
   /**
    * @nameZH 默认
    * @desc 默认尺寸
    * @default 16
    */
-  size: number
+  size: string
   /**
    * @nameZH SM
    * @default 12
    */
-  sizeSM: number
+  sizeSM: string
   /**
    * @nameZH XS
    * @default 8
    */
-  sizeXS: number
+  sizeXS: string
   /**
    * @nameZH XXS
    * @default 4
    */
-  sizeXXS: number
+  sizeXXS: string
 }
 
 export interface HeightMapToken {

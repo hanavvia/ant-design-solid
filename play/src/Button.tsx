@@ -121,7 +121,9 @@ export default () => {
             </Icon>
           }
         />
-        <Button size={size()} shape="circle">A</Button>
+        <Button size={size()} shape="circle">
+          A
+        </Button>
         <Button
           size={size()}
           icon={
@@ -156,6 +158,70 @@ export default () => {
         >
           搜索
         </Button>
+      </div>
+      <h1>Shape</h1>
+      <div style={{ display: 'flex', gap: '8px' }}>
+        <Button
+          shape="circle"
+          icon={
+            <Icon>
+              <SearchOutlined />
+            </Icon>
+          }
+        />
+        <Button
+          shape="round"
+          icon={
+            <Icon>
+              <SearchOutlined />
+            </Icon>
+          }
+        >
+          搜索
+        </Button>
+        <Button
+          shape="circle"
+          type="primary"
+          icon={
+            <Icon>
+              <SearchOutlined />
+            </Icon>
+          }
+        />
+        <Button
+          shape="round"
+          type="primary"
+          icon={
+            <Icon>
+              <SearchOutlined />
+            </Icon>
+          }
+        >
+          搜索
+        </Button>
+      </div>
+      <h1>Disabled</h1>
+      <div>
+        <div class="space">
+          <Button type="primary">Primary</Button>
+          <Button type="primary" disabled onClick={() => console.log('click')}>
+            Disabled Primary
+          </Button>
+        </div>
+        <div class="space">
+          <Button>Primary</Button>
+          <Button disabled onClick={() => console.log('click')}>
+            Disabled Default
+          </Button>
+        </div>
+        <div class="space">
+          <Button type="dashed">Dashed</Button>
+          <Button type="dashed" disabled>
+            Disabled Dashed
+          </Button>
+        </div>
+        <div></div>
+        <div></div>
       </div>
     </ConfigProvider>
   )

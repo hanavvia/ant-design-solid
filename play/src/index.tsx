@@ -2,6 +2,7 @@
 import { render } from 'solid-js/web'
 
 import './index.css'
+import './space.css'
 import '@ant-design-solid/theme-chalk/src/index.scss'
 import AntDesignSolid from 'ant-design-solid'
 ;(async () => {

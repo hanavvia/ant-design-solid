@@ -6,6 +6,12 @@
 
 $button-size: small, middle, large;
 
+@keyframes loadingCircle {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 @include b(button) {
   @include set-component-css-var('button', $button);
   outline: none;
@@ -34,6 +40,7 @@ $button-size: small, middle, large;
   @include m(type-primary) {
     color: getCssVar('button', 'color-primary');
     background-color: getCssVar('button', 'primary-bg-color');
+    box-shadow: getCssVar('button', 'box-shadow-primary');
 
     &:hover {
       background-color: getCssVar('button', 'primary-bg-color-hover');
@@ -142,11 +149,84 @@ $button-size: small, middle, large;
 
   /* ===== danger ===== */
   @include when-m(danger, type-primary) {
-    background-color: #ff4d4f;
+    background-color: getCssVar('button', 'color-danger');
     box-shadow: 0 2px 0 rgba(255, 38, 5, 0.06);
 
     &:hover {
-      background-color: #ff7875;
+      background-color: getCssVar('button', 'color-danger-hover');
     }
+  }
+  @include when-m(danger, (type-default, type-dashed)) {
+    color: getCssVar('button', 'color-danger');
+    border-color: getCssVar('button', 'color-danger');
+    box-shadow: 0 2px 0 rgba(255, 38, 5, 0.06);
+
+    &:hover {
+      color: getCssVar('button', 'color-danger-hover');
+      border-color: getCssVar('button', 'color-danger-hover');
+    }
+  }
+  @include when-m(danger, (type-text, type-link)) {
+    color: getCssVar('button', 'color-danger');
+
+    &:hover {
+      color: getCssVar('button', 'color-danger-hover');
+    }
+  }
+  @include when-m(danger, (type-text)) {
+    &:hover {
+      background-color: getCssVar('button', 'text-bg-color-danger-hover');
+    }
+  }
+
+  @include when(block) {
+    width: 100%;
+  }
+
+  @include when-m(
+    ghost,
+    (type-primary, type-default, type-link, type-dashed, type-text)
+  ) {
+    background-color: transparent;
+  }
+
+  @include when-m(ghost, (type-primary)) {
+    color: getCssVar('button', 'primary-bg-color');
+    border-color: getCssVar('button', 'primary-bg-color');
+
+    &:hover {
+      color: getCssVar('button', 'primary-bg-color-hover');
+      border-color: getCssVar('button', 'primary-bg-color-hover');
+    }
+
+    @include when(danger) {
+      color: getCssVar('button', 'color-danger');
+      border-color: getCssVar('button', 'color-danger');
+
+      &:hover {
+        background-color: transparent;
+        color: getCssVar('button', 'color-danger-hover');
+        border-color: getCssVar('button', 'color-danger-hover');
+      }
+    }
+  }
+
+  @include when-m(ghost, (type-default, type-dashed)) {
+    color: getCssVar('button', 'color-primary');
+    border-color: getCssVar('button', 'color-primary');
+
+    &:hover {
+      color: getCssVar('button', 'primary-bg-color');
+      border-color: getCssVar('button', 'primary-bg-color');
+    }
+  }
+
+  @include when(loading) {
+    opacity: 0.65;
+    cursor: default;
+  }
+
+  @include e(spin) {
+    animation: loadingCircle 1s infinite linear;
   }
 }

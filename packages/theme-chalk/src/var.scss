@@ -4,4 +4,7 @@
   @each $key, $value in $antd-font {
     --ant-#{$key}: #{$value};
   }
+  @each $key, $value in $antd-color {
+    --ant-color-#{$key}: #{$value};
+  }
 }

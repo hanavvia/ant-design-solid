@@ -19,24 +19,38 @@ $antd-font: map.merge(
   $antd-font
 );
 
+
+$antd-color: () !default;
+$antd-color: map.merge(
+  (
+    'danger': #ff4d4f,
+    'danger-hover': #ff7875,
+    // 'info': 12px,
+    // 'sucess': 16px,
+    // 'primary': 14px
+  ),
+  $antd-font
+);
+
 $button: () !default;
 $button: map.merge(
   (
-    'font-size': #{getAntCssVar('font', 'size-primary')},
-    'font-size-small': #{getAntCssVar('font', 'size-small')},
-    'font-weight': #{getAntCssVar('font', 'weight-regular')},
-    'icon-size-primary': #{getAntCssVar('font', 'icon-size-primary')},
-    'icon-size-small': #{getAntCssVar('font', 'icon-size-small')},
-    'color': #{getAntCssVar('color', 'text-base')},
-    'color-primary': #{getAntCssVar('color', 'white')},
-    'border-radius': #{getAntCssVar('border-radius')},
-    'border-color': #{getAntCssVar('color-border')},
-    'primary-bg-color': #{getAntCssVar('color-primary')},
-    'primary-bg-color-hover': #{getAntCssVar('color-primary-hover')},
+    'font-size': getAntCssVar('font', 'size-primary'),
+    'font-size-small': getAntCssVar('font', 'size-small'),
+    'font-weight': getAntCssVar('font', 'weight-regular'),
+    'icon-size-primary': getAntCssVar('font', 'icon-size-primary'),
+    'icon-size-small': getAntCssVar('font', 'icon-size-small'),
+    'color': getAntCssVar('color', 'text-base'),
+    'color-primary': getAntCssVar('color', 'white'),
+    'color-primary-hover': getAntCssVar('color-primary-hover'),
+    'border-radius': getAntCssVar('border-radius'),
+    'border-color': getAntCssVar('color-border'),
+    'primary-bg-color': getAntCssVar('color-primary'),
+    'primary-bg-color-hover': getCssVar('button', 'color-primary-hover'),
     'text-bg-color': transparent,
     'text-bg-color-hover': rgba(0,0,0,.06),
-    'link-color': #{getAntCssVar('color','primary')},
-    'link-color-hover': #{getAntCssVar('color', 'primary-border-hover')},
+    'link-color': getAntCssVar('color','primary'),
+    'link-color-hover': getAntCssVar('color', 'primary-border-hover'),
     'height-small': 24px,
     'height-middle': 32px,
     'height-large': 40px,
@@ -45,6 +59,9 @@ $button: map.merge(
     'height-large-half': 20px,
     'box-shadow': 0 2px 0 rgba(0, 0, 0, 0.02),
     'box-shadow-primary': 0 2px 0 rgba(5, 145, 255, 0.1),
+    'color-danger': getAntCssVar('color', 'danger'),
+    'color-danger-hover': getAntCssVar('color', 'danger-hover'),
+    'text-bg-color-danger-hover': #fff2f0,
   ),
   $button
 );

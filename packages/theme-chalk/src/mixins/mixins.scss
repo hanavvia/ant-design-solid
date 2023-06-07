@@ -167,6 +167,22 @@
   }
 }
 
+@mixin and-when($states) {
+  $selector: &;
+  $currentSelector: '';
+  @each $state in $states {
+    $currentSelector: #{$currentSelector +
+      $state-prefix +
+      $state};
+  }
+
+  @at-root {
+    #{$currentSelector} {
+      @content;
+    }
+  }
+}
+
 @mixin extend-rule($name) {
   @extend #{'%shared-' + $name} !optional;
 }

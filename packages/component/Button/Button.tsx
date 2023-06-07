@@ -69,15 +69,18 @@ export const Button: Component<ButtonProps> = (props) => {
         'not-icon-only',
         !!withDefaultProps.children && !!withDefaultProps.icon
       ),
+      ns.is('danger', !!withDefaultProps.danger),
       ns.is('icon-only', !withDefaultProps.children && !!withDefaultProps.icon)
     ])
   const clickHandler = (event: MouseEvent) => {
     if (!withDefaultProps.disabled) {
       withDefaultProps.onClick?.(event)
+    } else {
+      event.preventDefault()
     }
   }
   const renderTagA = () =>
-    withDefaultProps.type === 'link' && withDefaultProps.href
+    withDefaultProps.href || withDefaultProps.type === 'link'
   if (renderTagA()) {
     return (
       <a
@@ -86,7 +89,7 @@ export const Button: Component<ButtonProps> = (props) => {
         href={withDefaultProps.href}
         onClick={clickHandler}
       >
-        {children(() => props.children)()}
+        <span>{children(() => props.children)()}</span>
       </a>
     )
   }
@@ -100,7 +103,7 @@ export const Button: Component<ButtonProps> = (props) => {
       onClick={clickHandler}
     >
       {icon}
-      {children(() => props.children)()}
+      <span>{children(() => props.children)()}</span>
     </button>
   )
 }

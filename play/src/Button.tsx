@@ -201,7 +201,7 @@ export default () => {
         </Button>
       </div>
       <h1>Disabled</h1>
-      <div>
+      <div style={{ display: 'flex', 'flex-direction': 'column', gap: '8px' }}>
         <div class="space">
           <Button type="primary">Primary</Button>
           <Button type="primary" disabled onClick={() => console.log('click')}>
@@ -217,11 +217,45 @@ export default () => {
         <div class="space">
           <Button type="dashed">Dashed</Button>
           <Button type="dashed" disabled>
-            Disabled Dashed
+            Disabled Disaled
           </Button>
         </div>
-        <div></div>
-        <div></div>
+        <div>
+          <Button type="text">Text</Button>
+          <Button type="text" disabled>
+            Text Disaled
+          </Button>
+        </div>
+        <div>
+          <Button type="link">Link</Button>
+          <Button type="link" disabled>
+            Link Disaled
+          </Button>
+        </div>
+        <div class='space'>
+          <Button type="primary" href="https://ant.design/index-cn">
+            Href Primary
+          </Button>
+          <Button type="primary" href="https://ant.design/index-cn" disabled>
+            Href Primary(disabled)
+          </Button>
+        </div>
+      </div>
+      <h1>Danger</h1>
+      <div class="space">
+        <Button type="primary" danger>
+          Primary
+        </Button>
+        <Button danger>Default</Button>
+        <Button type="dashed" danger>
+          Dashed
+        </Button>
+        <Button type="text" danger>
+          Text
+        </Button>
+        <Button type="link" danger>
+          Link
+        </Button>
       </div>
     </ConfigProvider>
   )

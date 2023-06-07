@@ -16,6 +16,7 @@ $button-size: small, middle, large;
   font-weight: getCssVar('button', 'font-weight');
   white-space: nowrap;
   text-align: center;
+  box-sizing: border-box;
   background-image: none;
   background-color: transparent;
   border: 1px solid transparent;
@@ -27,37 +28,15 @@ $button-size: small, middle, large;
   font-size: getCssVar('button', 'font-size');
   padding: 4px 15px; //TODO
   border-radius: getCssVar('button', 'border-radius');
-  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.02); //TODO
-  border-color: getCssVar('button', 'border-color');
-
-  &:hover {
-    border-color: getCssVar('button', 'primary-bg-color');
-    color: getCssVar('button', 'primary-bg-color');
-  }
+  text-decoration: none solid rgb(255, 255, 255);
 
   /* === type === */
   @include m(type-primary) {
     color: getCssVar('button', 'color-primary');
     background-color: getCssVar('button', 'primary-bg-color');
-    box-shadow: 0 2px 0 rgba(5, 145, 255, 0.1);
 
     &:hover {
-      color: getCssVar('button', 'color-primary');
-      border-color: getCssVar('button', 'primary-bg-color-hover');
       background-color: getCssVar('button', 'primary-bg-color-hover');
-    }
-  }
-
-  /* ===== disabled ===== */
-  // TODO more disabled
-  @include when-m(disabled, (type-primary, type-default, type-dashed)) {
-    cursor: not-allowed;
-    color: rgba(0, 0, 0, 0.25);
-    background-color: rgba(0, 0, 0, 0.04);
-    box-shadow: none;
-
-    &:hover {
-      border-color: getCssVar('button', 'border-color');
     }
   }
 
@@ -65,8 +44,16 @@ $button-size: small, middle, large;
     border-style: dashed;
   }
 
+  @include m((type-default, type-dashed)) {
+    border-color: getCssVar('button', 'border-color');
+    box-shadow: getCssVar('button', 'box-shadow');
+    &:hover {
+      border-color: getCssVar('button', 'primary-bg-color');
+      color: getCssVar('button', 'primary-bg-color');
+    }
+  }
+
   @include m(type-text) {
-    border: none;
     &:hover {
       background-color: getCssVar('button', 'text-bg-color-hover');
     }
@@ -78,6 +65,24 @@ $button-size: small, middle, large;
 
     &:hover {
       color: getCssVar('button', 'link-color-hover');
+    }
+  }
+
+  /* ===== disabled ===== */
+  // TODO more disabled
+  @include when-m(disabled, (type-primary, type-default, type-dashed)) {
+    cursor: not-allowed;
+    color: rgba(0, 0, 0, 0.25);
+    background-color: rgba(0, 0, 0, 0.04);
+    box-shadow: none;
+    border-color: getCssVar('button', 'border-color');
+  }
+  @include when-m(disabled, (type-text, type-link)) {
+    cursor: not-allowed;
+    color: rgba(0, 0, 0, 0.25);
+
+    &:hover {
+      background-color: transparent;
     }
   }
 
@@ -132,6 +137,16 @@ $button-size: small, middle, large;
     font-size: getCssVar('button', 'font-size-small');
     @include e(icon) {
       font-size: getCssVar('button', 'icon-size-small');
+    }
+  }
+
+  /* ===== danger ===== */
+  @include when-m(danger, type-primary) {
+    background-color: #ff4d4f;
+    box-shadow: 0 2px 0 rgba(255, 38, 5, 0.06);
+
+    &:hover {
+      background-color: #ff7875;
     }
   }
 }

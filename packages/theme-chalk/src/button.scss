@@ -55,8 +55,8 @@ $button-size: small, middle, large;
     border-color: getCssVar('button', 'border-color');
     box-shadow: getCssVar('button', 'box-shadow');
     &:hover {
-      border-color: getCssVar('button', 'primary-bg-color');
-      color: getCssVar('button', 'primary-bg-color');
+      border-color: getCssVar('button', 'primary-bg-color-hover');
+      color: getCssVar('button', 'primary-bg-color-hover');
     }
   }
 
@@ -221,12 +221,16 @@ $button-size: small, middle, large;
     }
   }
 
-  @include when(loading) {
-    opacity: 0.65;
-    cursor: default;
+  @include m(type-primary) {
+    @include when(loading) {
+      opacity: 0.65;
+      cursor: default;
+    }
   }
 
   @include e(spin) {
     animation: loadingCircle 1s infinite linear;
+    height: 14px;
+    width: 14px;
   }
 }

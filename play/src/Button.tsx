@@ -282,13 +282,7 @@ export default () => {
           <Button type="primary" loading>
             Primary
           </Button>
-          <Button>Default</Button>
-          <Button type="dashed">
-            Dashed
-          </Button>
-          <Button type="primary">
-            Danger
-          </Button>
+          <Button loading>Default</Button>
         </div>
       </div>
     </ConfigProvider>

@@ -1,6 +1,6 @@
 import { useFlexGapSupport } from '@ant-design-solid/hooks'
-import { useNamespace } from '@ant-design-solid/hooks/src/use-namespace'
-import { ComponentSize, toArray } from '@ant-design-solid/shared'
+import { useNamespace } from '@ant-design-solid/hooks'
+import { ComponentSize, MaybeAccssor, toArray } from '@ant-design-solid/shared'
 import { useConfigProvider } from 'ant-design-solid'
 import classNames from 'classnames'
 import {
@@ -27,7 +27,14 @@ export interface SpaceProps extends JSX.HTMLAttributes<HTMLDivElement> {
   wrap?: boolean
 }
 
-export const SpaceContext = createContext({
+export interface ISpaceContext {
+  latestIndex: MaybeAccssor<number>
+  horizontalSize: MaybeAccssor<number>
+  verticalSize: MaybeAccssor<number>
+  supportFlexGap: MaybeAccssor<boolean>
+}
+
+export const SpaceContext = createContext<ISpaceContext>({
   latestIndex: 0,
   horizontalSize: 0,
   verticalSize: 0,
@@ -105,14 +112,10 @@ export const Space: SpaceType = (props) => {
 
   // Calculate latest one
   const [latestIndex, setLastIndex] = createSignal(0)
-  const childNodes = toArray(props.children, { keepEmpty: true })
-
+  const childNodes = () => toArray(props.children, { keepEmpty: true })
+  setLastIndex(childNodes().length - 1)
   const nodes = () =>
-    childNodes.map((child, i) => {
-      if (child !== null && child !== undefined) {
-        setLastIndex(i)
-      }
-      // TODO
+    childNodes().map((child, i) => {
       return (
         <Item
           className={ns.e('item')}
@@ -128,10 +131,10 @@ export const Space: SpaceType = (props) => {
     })
 
   const spaceContext = createMemo(() => ({
-    horizontalSize: gapSize()[0],
-    verticalSize: gapSize()[1],
-    latestIndex: latestIndex(),
-    supportFlexGap: supportFlexGap()
+    horizontalSize: () => gapSize()[0],
+    verticalSize: () => gapSize()[1],
+    latestIndex: () => latestIndex(),
+    supportFlexGap: () => supportFlexGap()
   }))
 
   return (

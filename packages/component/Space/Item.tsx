@@ -1,5 +1,6 @@
-import { JSX, children, useContext } from 'solid-js'
+import { JSX, children, createEffect, useContext } from 'solid-js'
 import { SpaceContext } from './Space'
+import { toValue } from '@ant-design-solid/shared'
 
 export interface ItemProps {
   className: string
@@ -19,18 +20,18 @@ export default (props: ItemProps) => {
 
     if (!context.supportFlexGap) {
       if (props.direction === 'vertical') {
-        if (props.index < context.latestIndex) {
+        if (props.index < toValue(context.latestIndex)) {
           result = {
             'margin-bottom': `${
-              context.horizontalSize / (props.split ? 2 : 1)
+              toValue(context.horizontalSize) / (props.split ? 2 : 1)
             }px`
           }
         }
       } else {
         result = {
-          ...(props.index < context.latestIndex && {
+          ...(props.index < toValue(context.latestIndex) && {
             [props.marginDirection]:
-              context.horizontalSize / (props.split ? 2 : 1)
+              toValue(context.horizontalSize) / (props.split ? 2 : 1)
           }),
           ...(props.wrap && { paddingBottom: context.verticalSize })
         }
@@ -43,16 +44,32 @@ export default (props: ItemProps) => {
     return null
   }
 
+  createEffect(() => {
+    if (props.split) {
+      console.log(toValue(context.latestIndex))
+    }
+  })
+
+  const split = () =>
+    props.index < toValue(context.latestIndex) &&
+    props.split && (
+      <span class={`${props.className}-split`} style={style()}>
+        {props.split}
+      </span>
+    )
+
+  if (props.split) {
+    console.log('props.index', props.index)
+    console.log('context.latestIndex', toValue(context.latestIndex))
+    console.log(props.index < toValue(context.latestIndex) && props.split)
+  }
+
   return (
     <>
       <div style={style()} class={props.className}>
         {children(() => props.children)()}
       </div>
-      {props.index < context.latestIndex && props.split && (
-        <span class={`${props.className}-split`} style={style()}>
-          {props.split}
-        </span>
-      )}
+      {split()}
     </>
   )
 }

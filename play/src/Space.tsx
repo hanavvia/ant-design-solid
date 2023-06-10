@@ -1,4 +1,4 @@
-import { Space, Button } from 'ant-design-solid'
+import { Space, Button, Divider } from 'ant-design-solid'
 
 import './css/space.css'
 
@@ -75,11 +75,11 @@ export default () => {
       </div>
       <h1>分隔符</h1>
       <div>
-        {/* <Space split={<Divider type="vertical" />}>
-          <Typography.Link>Link</Typography.Link>
-          <Typography.Link>Link</Typography.Link>
-          <Typography.Link>Link</Typography.Link>
-        </Space> */}
+        <Space split={<Divider type="vertical" />}>
+          <Button>Link</Button>
+          <Button>Link</Button>
+          <Button>Link</Button>
+        </Space>
       </div>
     </div>
   )

@@ -1,0 +1,30 @@
+@use 'mixins/mixins' as *;
+
+@include b(space) {
+    display: inline-flex;
+
+    @include m(horizontal) {
+        flex-direction: row;
+    }
+
+    @include m(vertical) {
+        flex-direction: column;
+    }
+
+    // 'start' | 'end' | 'center' | 'baseline'
+    @include m(align-start) {
+        align-items: flex-start;
+    }
+
+    @include m(align-end) {
+        align-items: flex-end;
+    }
+
+    @include m(align-center) {
+        align-items: center;
+    }
+    
+    @include m(align-baseline) {
+        align-items: baseline;
+    }
+}

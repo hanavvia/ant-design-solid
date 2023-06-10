@@ -16,7 +16,7 @@ import {
   grey,
   gray
 } from '@ant-design/colors'
-import { NAMESPACE } from '@ant-design-solid/shared'
+import { ComponentSize, NAMESPACE } from '@ant-design-solid/shared'
 
 export const defaultColorPrimaries = {
   red: red.primary,
@@ -44,6 +44,10 @@ export interface IConfigProviderContext {
     }>
     primary?: string
   }
+  space?: {
+    size: ComponentSize | number
+  }
+  direction?: DirectionType
 }
 
 export const defaultConfigProviderContext: IConfigProviderContext = {
@@ -54,14 +58,16 @@ export const defaultConfigProviderContext: IConfigProviderContext = {
   }
 }
 
+export type DirectionType = 'ltr' | 'rtl' | undefined
+
 export interface ConfigProviderProps extends IConfigProviderContext {
   children?: JSX.Element
 }
 
-const ConfigProviderContext = createContext<IConfigProviderContext>()
+const ConfigProviderContext = createContext<IConfigProviderContext>({})
 
 export const useConfigProvider = () =>
-  useContext<IConfigProviderContext | undefined>(ConfigProviderContext)
+  useContext<IConfigProviderContext>(ConfigProviderContext)
 
 export const ConfigProvider: Component<ConfigProviderProps> = (props) => {
   const merged = mergeProps(defaultConfigProviderContext, props)

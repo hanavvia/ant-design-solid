@@ -6,10 +6,13 @@ export type Color = {
   red: string
 }
 
+export type DirectionType = 'ltr' | 'rtl' | undefined
+
 export interface GlobalConfig {
   size?: ComponentSize
   namespace?: string
   color?: Color
+  direction?: DirectionType
 }
 
 export const defaultGlobalConfig: GlobalConfig = {

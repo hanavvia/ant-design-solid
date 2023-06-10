@@ -1,0 +1,120 @@
+@use 'mixins/mixins' as *;
+
+
+@include b(divider) {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: rgba(0, 0, 0, 0.88);
+  font-size: 14px;
+  line-height: 1.5714285714285714;
+  list-style: none;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  border-block-start: 1px solid rgba(5, 5, 5, 0.06);
+
+  @include m(horizontal) {
+    display: flex;
+    clear: both;
+    width: 100%;
+    min-width: 100%;
+    margin: 24px 0;
+  }
+
+  @include and-m((horizontal, 'with-text')) {
+    display: flex;
+    align-items: center;
+    margin: 16px 0;
+    color: rgba(0, 0, 0, 0.88);
+    font-weight: 500;
+    font-size: 16px;
+    white-space: nowrap;
+    text-align: center;
+    border-block-start: 0 rgba(5, 5, 5, 0.06);
+
+    &::before,
+    &::after {
+      position: relative;
+      border-block-start: 1px solid transparent;
+      border-block-start-color: inherit;
+      border-block-end: 0;
+      transform: translateY(50%);
+      content: '';
+    }
+  }
+
+  @include and-m((horizontal, 'with-text-center')) {
+    &::after, &::before {
+        width: 50%;
+    }
+  }
+
+  @include and-m((horizontal, 'with-text-left')) {
+    &::after {
+        width: 100%;
+    }
+  }
+
+  @include and-m((horizontal, 'with-text-right')) {
+    &::before {
+        width: 100%;
+    }
+  }
+
+  @include and-m(
+    (
+      'horizontal',
+      'with-text',
+      'with-text-left',
+      'no-default-orientation-margin-left'
+    )
+  ) {
+    @include e('inner-text') {
+      padding-inline-start: 0;
+    }
+  }
+
+  @include and-m(
+    (
+      'horizontal',
+      'with-text',
+      'with-text-right',
+      'no-default-orientation-margin-right'
+    )
+  ) {
+    @include e('inner-text') {
+      padding-inline-end: 0;
+    }
+  }
+
+  @include m(dashed) {
+    background: none;
+    border-color: rgba(5, 5, 5, 0.06);
+    border-style: dashed;
+    border-width: 1px 0 0;
+  }
+
+  @include e('inner-text') {
+    box-sizing: border-box;
+    display: inline-block;
+    padding: 0 1em;
+  }
+
+  @include and-m(('plain', 'with-text')) {
+    color: rgba(0, 0, 0, 0.88);
+    font-weight: normal;
+    font-size: 14px;
+  }
+
+  @include m(vertical) {
+    position: relative;
+    top: -0.06em;
+    display: inline-block;
+    height: 0.9em;
+    margin: 0 8px;
+    vertical-align: middle;
+    border-top: 0;
+    border-inline-start: 1px solid rgba(5, 5, 5, 0.06);
+  }
+}

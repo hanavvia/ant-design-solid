@@ -1,3 +1,5 @@
 export * from './Button'
 export * from './Icon'
 export * from './ConfigProvider'
+export * from './Space'
+export * from './Divider'

@@ -1,5 +1,5 @@
 import type { FontMapToken } from '../../interface'
-import { numberToPxVal } from '../../util/sizeUnit'
+import { toPx } from '../../util/sizeUnit'
 import genFontSizes from './genFontSizes'
 
 const genFontMapToken = (fontSize: number): FontMapToken => {
@@ -8,16 +8,16 @@ const genFontMapToken = (fontSize: number): FontMapToken => {
   const lineHeights = fontSizePairs.map((pair) => pair.lineHeight)
 
   return {
-    fontSizeSM: numberToPxVal(fontSizes[0]),
-    fontSize: numberToPxVal(fontSizes[1]),
-    fontSizeLG: numberToPxVal(fontSizes[2]),
-    fontSizeXL: numberToPxVal(fontSizes[3]),
+    fontSizeSM: toPx(fontSizes[0]),
+    fontSize: toPx(fontSizes[1]),
+    fontSizeLG: toPx(fontSizes[2]),
+    fontSizeXL: toPx(fontSizes[3]),
 
-    fontSizeHeading1: numberToPxVal(fontSizes[6]),
-    fontSizeHeading2: numberToPxVal(fontSizes[5]),
-    fontSizeHeading3: numberToPxVal(fontSizes[4]),
-    fontSizeHeading4: numberToPxVal(fontSizes[3]),
-    fontSizeHeading5: numberToPxVal(fontSizes[2]),
+    fontSizeHeading1: toPx(fontSizes[6]),
+    fontSizeHeading2: toPx(fontSizes[5]),
+    fontSizeHeading3: toPx(fontSizes[4]),
+    fontSizeHeading4: toPx(fontSizes[3]),
+    fontSizeHeading5: toPx(fontSizes[2]),
 
     lineHeight: lineHeights[1],
     lineHeightLG: lineHeights[2],

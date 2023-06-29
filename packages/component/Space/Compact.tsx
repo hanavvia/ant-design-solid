@@ -46,7 +46,7 @@ export const useCompactItemContext = (direction: DirectionType) => {
       [`${ns.e(`${separator}item`)}`]: true,
       [`${ns.em(`${separator}item`, 'first')}`]: isFirstItem,
       [`${ns.em(`${separator}item`, 'last')}`]: isLastItem,
-      [`${ns.em(`${separator}item`, 'rtl')}`]: direction === 'rtl'
+      [`${ns.is('rtl')}`]: direction === 'rtl'
     })
   })
 
@@ -103,7 +103,7 @@ const Compact: Component<SpaceCompactProps> = (props) => {
     classNames(
       ns.b(),
       {
-        [`${ns.m('rtl')}`]: directionConfig() === 'rtl',
+        [`${ns.is('rtl')}`]: directionConfig() === 'rtl',
         [`${ns.m('block')}`]: local.block,
         [`${ns.m('vertical')}`]: local.direction === 'vertical'
       },

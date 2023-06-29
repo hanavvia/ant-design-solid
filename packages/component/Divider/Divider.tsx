@@ -59,7 +59,7 @@ export const Divider: Component<DividerProps> = (props) => {
         [`${ns.m(`with-text${orientationPrefix()}`)}`]: hasChildren(),
         [`${ns.m('dashed')}`]: !!local.dashed,
         [`${ns.m('plain')}`]: !!local.plain,
-        [`${ns.m('rtl')}`]: globalDirection() === 'rtl',
+        [`${ns.is('rtl')}`]: globalDirection() === 'rtl',
         [`${ns.m('no-default-orientation-margin-left')}`]:
           hasCustomMarginLeft(),
         [`${ns.m('no-default-orientation-margin-right')}`]:

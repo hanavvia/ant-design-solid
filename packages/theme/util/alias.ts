@@ -7,6 +7,7 @@ import type {
 } from '../interface'
 import seedToken from '../themes/seed'
 import getAlphaColor from './getAlphaColor'
+import { pxToNumber, toPx } from './sizeUnit'
 
 /** Raw merge of `@ant-design/cssinjs` token. Which need additional process */
 type RawMergedToken = MapToken &
@@ -101,7 +102,7 @@ export default function formatToken(
     lineWidth: mergedToken.lineWidth,
     controlOutlineWidth: mergedToken.lineWidth * 2,
     // Checkbox size and expand icon size
-    controlInteractiveSize: mergedToken.controlHeight / 2,
+    controlInteractiveSize: toPx(pxToNumber(mergedToken.controlHeight) / 2),
 
     controlItemBgHover: mergedToken.colorFillTertiary,
     controlItemBgActive: mergedToken.colorPrimaryBg,
@@ -127,8 +128,8 @@ export default function formatToken(
     linkHoverDecoration: 'none',
     linkFocusDecoration: 'none',
 
-    controlPaddingHorizontal: 12,
-    controlPaddingHorizontalSM: 8,
+    controlPaddingHorizontal: '12px',
+    controlPaddingHorizontalSM: '8px',
 
     paddingXXS: mergedToken.sizeXXS,
     paddingXS: mergedToken.sizeXS,
@@ -170,23 +171,23 @@ export default function formatToken(
       0 2px 4px 0 rgba(0, 0, 0, 0.02)
     `,
 
-    screenXS,
-    screenXSMin: screenXS,
-    screenXSMax: screenSM - 1,
-    screenSM,
-    screenSMMin: screenSM,
-    screenSMMax: screenMD - 1,
-    screenMD,
-    screenMDMin: screenMD,
-    screenMDMax: screenLG - 1,
-    screenLG,
-    screenLGMin: screenLG,
-    screenLGMax: screenXL - 1,
-    screenXL,
-    screenXLMin: screenXL,
-    screenXLMax: screenXXL - 1,
-    screenXXL,
-    screenXXLMin: screenXXL,
+    screenXS: toPx(screenXS),
+    screenXSMin: toPx(screenXS),
+    screenXSMax: toPx(screenSM - 1),
+    screenSM: toPx(screenSM),
+    screenSMMin: toPx(screenSM),
+    screenSMMax: toPx(screenMD - 1),
+    screenMD: toPx(screenMD),
+    screenMDMin: toPx(screenMD),
+    screenMDMax: toPx(screenLG - 1),
+    screenLG: toPx(screenLG),
+    screenLGMin: toPx(screenLG),
+    screenLGMax: toPx(screenXL - 1),
+    screenXL: toPx(screenXL),
+    screenXLMin: toPx(screenXL),
+    screenXLMax: toPx(screenXXL - 1),
+    screenXXL: toPx(screenXXL),
+    screenXXLMin: toPx(screenXXL),
 
     boxShadowPopoverArrow: '2px 2px 5px rgba(0, 0, 0, 0.05)',
     boxShadowCard: `

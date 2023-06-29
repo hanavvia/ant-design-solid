@@ -1,0 +1,43 @@
+@use 'mixins/mixins' as *;
+
+@include b(row) {
+    display: flex;
+    flex-flow: row wrap;
+    min-width: 0;
+
+    @include m(start) {
+        justify-content: flex-start;
+    }
+
+    @include m(center) {
+        justify-content: center;
+    }
+
+    @include m(end) {
+        justify-content: flex-end;
+    }
+
+    @include m(space-between) {
+        justify-content: space-between;
+    }
+
+    @include m(space-around) {
+        justify-content: space-around;
+    }
+
+    @include m(space-evenly) {
+        justify-content: space-evenly;
+    }
+
+    @include m(top) {
+        align-items: flex-start;
+    }
+
+    @include m(middle) {
+        align-items: center;
+    }
+
+    @include m(bottom) {
+        align-items: flex-end;
+    }
+}

@@ -1,0 +1,28 @@
+@use 'sass:math';
+@use 'mixins/mixins' as *;
+
+@include b(col) {
+  position: relative;
+  box-sizing: border-box;
+  max-width: 100%;
+
+  @for $i from 1 through 24 {
+    @include m(#{$i}) {
+      display: block;
+      flex: 0 0 #{(math.div($i, 24) * 100) + '%'};
+      max-width: #{(math.div($i, 24) * 100) + '%'};
+    }
+    @include m(offset-#{$i}) {
+      margin-inline-start: #{(math.div($i, 24) * 100) + '%'};
+    }
+    @include m(push-#{$i}) {
+      inset-inline-start: #{(math.div($i, 24) * 100) + '%'};
+    }
+    @include m(pull-#{$i}) {
+      inset-inline-end: #{(math.div($i, 24) * 100) + '%'};
+    }
+    @include m(order-#{$i}) {
+      order: $i;
+    }
+  }
+}

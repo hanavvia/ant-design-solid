@@ -83,7 +83,7 @@ export const Space: SpaceType = (props) => {
       ns.b(),
       ns.m(merged.direction),
       {
-        [`${ns.m('rtl')}`]: globalConfig.direction === 'rtl',
+        [`${ns.is('rtl')}`]: globalConfig.direction === 'rtl',
         [`${ns.m(`align-${align()}`)}`]: align()
       },
       merged.className,
@@ -110,10 +110,8 @@ export const Space: SpaceType = (props) => {
     return style
   }
 
-  // Calculate latest one
-  const [latestIndex, setLastIndex] = createSignal(0)
   const childNodes = () => toArray(props.children, { keepEmpty: true })
-  setLastIndex(childNodes().length - 1)
+  const latestIndex = () => childNodes().length - 1 || 0
   const nodes = () =>
     childNodes().map((child, i) => {
       return (

@@ -190,7 +190,7 @@ export interface AliasToken extends MapToken {
    * @desc 控制选择器、级联选择器等中的操作图标字体大小。正常情况下与 fontSizeSM 相同。
    * @descEN Control the font size of operation icon in Select, Cascader, etc. Normally same as fontSizeSM.
    */
-  fontSizeIcon: number
+  fontSizeIcon: string
 
   /**
    * @nameZH 标题类组件（如 h1、h2、h3）或选中项的字体粗细
@@ -240,7 +240,7 @@ export interface AliasToken extends MapToken {
    * @desc 控制组件的交互大小。
    * @descEN Control the interactive size of control component.
    */
-  controlInteractiveSize: number
+  controlInteractiveSize: string
 
   /**
    * @nameZH 控制组件项在禁用状态下的激活背景颜色
@@ -266,49 +266,49 @@ export interface AliasToken extends MapToken {
    * @desc 控制元素的极小内间距。
    * @descEN Control the extra extra small padding of the element.
    */
-  paddingXXS: number
+  paddingXXS: string
   /**
    * @nameZH 特小内间距
    * @nameEN Extra small padding
    * @desc 控制元素的特小内间距。
    * @descEN Control the extra small padding of the element.
    */
-  paddingXS: number
+  paddingXS: string
   /**
    * @nameZH 小内间距
    * @nameEN Small padding
    * @desc 控制元素的小内间距。
    * @descEN Control the small padding of the element.
    */
-  paddingSM: number
+  paddingSM: string
   /**
    * @nameZH 内间距
    * @nameEN Padding
    * @desc 控制元素的内间距。
    * @descEN Control the padding of the element.
    */
-  padding: number
+  padding: string
   /**
    * @nameZH 中等内间距
    * @nameEN Medium padding
    * @desc 控制元素的中等内间距。
    * @descEN Control the medium padding of the element.
    */
-  paddingMD: number
+  paddingMD: string
   /**
    * @nameZH 大内间距
    * @nameEN Large padding
    * @desc 控制元素的大内间距。
    * @descEN Control the large padding of the element.
    */
-  paddingLG: number
+  paddingLG: string
   /**
    * @nameZH 特大内间距
    * @nameEN Extra large padding
    * @desc 控制元素的特大内间距。
    * @descEN Control the extra large padding of the element.
    */
-  paddingXL: number
+  paddingXL: string
 
   // Padding Content
   /**
@@ -317,42 +317,42 @@ export interface AliasToken extends MapToken {
    * @desc 控制内容元素水平内间距，适用于大屏幕设备。
    * @descEN Control the horizontal padding of content element, suitable for large screen devices.
    */
-  paddingContentHorizontalLG: number
+  paddingContentHorizontalLG: string
   /**
    * @nameZH 内容水平内间距
    * @nameEN Content horizontal padding
    * @desc 控制内容元素水平内间距。
    * @descEN Control the horizontal padding of content element.
    */
-  paddingContentHorizontal: number
+  paddingContentHorizontal: string
   /**
    * @nameZH 内容水平内间距（SM）
    * @nameEN Content horizontal padding (SM)
    * @desc 控制内容元素水平内间距，适用于小屏幕设备。
    * @descEN Control the horizontal padding of content element, suitable for small screen devices.
    */
-  paddingContentHorizontalSM: number
+  paddingContentHorizontalSM: string
   /**
    * @nameZH 内容垂直内间距（LG）
    * @nameEN Content vertical padding (LG)
    * @desc 控制内容元素垂直内间距，适用于大屏幕设备。
    * @descEN Control the vertical padding of content element, suitable for large screen devices.
    */
-  paddingContentVerticalLG: number
+  paddingContentVerticalLG: string
   /**
    * @nameZH 内容垂直内间距
    * @nameEN Content vertical padding
    * @desc 控制内容元素垂直内间距。
    * @descEN Control the vertical padding of content element.
    */
-  paddingContentVertical: number
+  paddingContentVertical: string
   /**
    * @nameZH 内容垂直内间距（SM）
    * @nameEN Content vertical padding (SM)
    * @desc 控制内容元素垂直内间距，适用于小屏幕设备。
    * @descEN Control the vertical padding of content element, suitable for small screen devices.
    */
-  paddingContentVerticalSM: number
+  paddingContentVerticalSM: string
 
   // Margin
   /**
@@ -361,56 +361,56 @@ export interface AliasToken extends MapToken {
    * @desc 控制元素外边距，最小尺寸。
    * @descEN Control the margin of an element, with the smallest size.
    */
-  marginXXS: number
+  marginXXS: string
   /**
    * @nameZH 外边距 XS
    * @nameEN Margin XS
    * @desc 控制元素外边距，小尺寸。
    * @descEN Control the margin of an element, with a small size.
    */
-  marginXS: number
+  marginXS: string
   /**
    * @nameZH 外边距 SM
    * @nameEN Margin SM
    * @desc 控制元素外边距，中小尺寸。
    * @descEN Control the margin of an element, with a medium-small size.
    */
-  marginSM: number
+  marginSM: string
   /**
    * @nameZH 外边距
    * @nameEN Margin
    * @desc 控制元素外边距，中等尺寸。
    * @descEN Control the margin of an element, with a medium size.
    */
-  margin: number
+  margin: string
   /**
    * @nameZH 外边距 MD
    * @nameEN Margin MD
    * @desc 控制元素外边距，中大尺寸。
    * @descEN Control the margin of an element, with a medium-large size.
    */
-  marginMD: number
+  marginMD: string
   /**
    * @nameZH 外边距 LG
    * @nameEN Margin LG
    * @desc 控制元素外边距，大尺寸。
    * @descEN Control the margin of an element, with a large size.
    */
-  marginLG: number
+  marginLG: string
   /**
    * @nameZH 外边距 XL
    * @nameEN Margin XL
    * @desc 控制元素外边距，超大尺寸。
    * @descEN Control the margin of an element, with an extra-large size.
    */
-  marginXL: number
+  marginXL: string
   /**
    * @nameZH 外边距 XXL
    * @nameEN Margin XXL
    * @desc 控制元素外边距，最大尺寸。
    * @descEN Control the margin of an element, with the largest size.
    */
-  marginXXL: number
+  marginXXL: string
 
   // =============== Legacy: should be remove ===============
   /**

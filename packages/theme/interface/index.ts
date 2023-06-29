@@ -9,6 +9,10 @@ export type OverrideToken = {
 /** Final token which contains the components level override */
 export type GlobalToken = AliasToken & ComponentTokenMap
 
+export interface Theme {
+  global?: GlobalToken
+}
+
 export { PresetColors } from './presetColors'
 export type {
   PresetColorType,
